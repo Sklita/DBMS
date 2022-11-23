@@ -1,4 +1,4 @@
-How to run the Blood Bank & Donor Management System Using PHP and MySQL
+How to run the Donor Excess Using PHP and MySQL
 
 1. Download the zip file
 
