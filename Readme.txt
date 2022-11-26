@@ -1,4 +1,4 @@
-How to run the Blood Bank & Donor Management System Using PHP and MySQL
+How to run the Donor Excess Using PHP and MySQL
 
 1. Download the zip file
 
@@ -18,7 +18,5 @@ Admin Credential
 Username: admin
 Password: Test@123
 
-Donor Credential
-Username: amitk@gmail.com
-Password: Test@123
-Or Register a new user.
+Donor Credentials:
+Register a new user.
