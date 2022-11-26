@@ -18,7 +18,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
     $bloodgroup=$_POST['bloodgroup']; 
     $address=$_POST['address'];
     $message=$_POST['message']; 
-  $sql="update tblblooddonars set FullName=:name,MobileNumber=:mno, Age=:age,Gender=:gender,BloodGroup=:bloodgroup,Address=:address,Message=:message  where id=:uid";
+  $sql="update tbldonars set FullName=:name,MobileNumber=:mno, Age=:age,Gender=:gender,BloodGroup=:bloodgroup,Address=:address,Message=:message  where id=:uid";
      $query = $dbh->prepare($sql);
      $query->bindParam(':name',$name,PDO::PARAM_STR);
      $query->bindParam(':mno',$mno,PDO::PARAM_STR);
@@ -97,7 +97,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Donor Profile</h3>
 				<span>
-					<i class="fas fa-user-md"></i>
+					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
 			</div>
 			<div class="d-flex">
@@ -109,7 +109,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 					<form action="#" method="post">
 						<?php
 $uid=$_SESSION['bbdmsdid'];
-$sql="SELECT * from  tblblooddonars where id=:uid";
+$sql="SELECT * from  tbldonars where id=:uid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
@@ -149,7 +149,7 @@ foreach($results as $row)
 							<label for="datepicker" class="col-form-label">Donation Group</label>
 							<select name="bloodgroup" class="form-control" required>
 								<option value="<?php  echo $row->BloodGroup;?>"><?php  echo $row->BloodGroup;?></option>
-<?php $sql = "SELECT * from  tblbloodgroup ";
+<?php $sql = "SELECT * from  tblgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

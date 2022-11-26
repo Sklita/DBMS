@@ -128,7 +128,7 @@ $sdata=$_POST['searchdata'];
                                        
                                         <tr><?php
                                           
-$sql="SELECT tblbloodrequirer.BloodDonarID,tblbloodrequirer.name,tblbloodrequirer.EmailId,tblbloodrequirer.ContactNumber,tblbloodrequirer.BloodRequirefor,tblbloodrequirer.Message,tblbloodrequirer.ApplyDate,tblblooddonars.id as donid,tblblooddonars.FullName,tblblooddonars.MobileNumber from  tblbloodrequirer join tblblooddonars on tblblooddonars.id=tblbloodrequirer.BloodDonarID where tblblooddonars.FullName like '%$sdata%' || tblblooddonars.MobileNumber like '%$sdata%'";
+$sql="SELECT tblrequirer.BloodDonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid,tbldonars.FullName,tbldonars.MobileNumber from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.BloodDonarID where tbldonars.FullName like '%$sdata%' || tbldonars.MobileNumber like '%$sdata%'";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();

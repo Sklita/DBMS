@@ -86,13 +86,14 @@ return true;
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Request Received</h3>
 				<span>
-					<i class="fas fa-user-md"></i>
+					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
 			</div>
+			
 			<div class="d-flex">
 				
 				<div class="contact-right-w3l appoint-form" style="width:100% !important;">
-					<h5 class="title-w3 text-center mb-5">Below is the detail of Blood Requirer.</h5>
+					<h5 class="title-w3 text-center mb-5">Below is the detail of Requirer.</h5>
 					<table border="1" class="table table-bordered">
                                     <thead>
                                          <tr>
@@ -101,9 +102,10 @@ return true;
                                             <th>Name</th>
                                             <th>Mobile Number</th>
                                             <th>Email</th>
-                                            <th>Blood Require For</th>
+                                            <th>Require For</th>
                                             <th>Message</th>
                                             <th>Apply Date</th>
+											<th>Donate/Reject</th>
                                         </tr>
                                     </thead>
                                    
@@ -111,7 +113,7 @@ return true;
                                        
                                         <tr><?php
                                           $uid=$_SESSION['bbdmsdid'];
-$sql="SELECT tblbloodrequirer.BloodDonarID,tblbloodrequirer.name,tblbloodrequirer.EmailId,tblbloodrequirer.ContactNumber,tblbloodrequirer.BloodRequirefor,tblbloodrequirer.Message,tblbloodrequirer.ApplyDate,tblblooddonars.id as donid from  tblbloodrequirer join tblblooddonars on tblblooddonars.id=tblbloodrequirer.BloodDonarID where tblbloodrequirer.BloodDonarID=:uid";
+$sql="SELECT tblrequirer.BloodDonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.BloodDonarID where tblrequirer.BloodDonarID=:uid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
@@ -134,6 +136,10 @@ foreach($results as $row)
                                             <td>
                                               <?php  echo htmlentities($row->ApplyDate);?>  
                                             </td>
+											<td>
+											<a class="btn btn-primary" style="color:#fff" href="mailto:<?php echo $row->EmailId;?>">Donate</a>
+											<a class="btn btn-danger" style="color:#fff"  href="mailto:<?php echo $row->EmailId;?>">Reject</a>
+											</td>
                                         </tr>
                                     <?php $cnt=$cnt+1;}} else {?>
                                         <tr>
@@ -147,6 +153,11 @@ foreach($results as $row)
 			</div>
 		</div>
 	</div>
+	<div class="w3ls-titles text-center mb-5">
+				<h4>If already donated or no donation avaialble , Please notify us </h4>
+				<br>
+				<a class="btn btn-primary" style="color:#fff" href="request-delete.php">Notify Us</a>
+		    </div>
 	<!-- //contact -->
 
 	<?php include('includes/footer.php');?>

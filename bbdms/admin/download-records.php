@@ -27,7 +27,7 @@ if(strlen($_SESSION['alogin'])==0)
 
 <?php 
 $filename="Donor list";
-$sql = "SELECT * from  tblblooddonars ";
+$sql = "SELECT * from  tbldonars ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

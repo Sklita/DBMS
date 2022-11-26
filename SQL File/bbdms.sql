@@ -47,10 +47,10 @@ INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblblooddonars`
+-- Table structure for table `tbldonars`
 --
 
-CREATE TABLE `tblblooddonars` (
+CREATE TABLE `tbldonars` (
   `id` int(11) NOT NULL,
   `FullName` varchar(100) DEFAULT NULL,
   `MobileNumber` char(11) DEFAULT NULL,
@@ -66,10 +66,10 @@ CREATE TABLE `tblblooddonars` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblblooddonars`
+-- Dumping data for table `tbldonars`
 --
 
-INSERT INTO `tblblooddonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Gender`, `Age`, `BloodGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`) VALUES
+INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Gender`, `Age`, `BloodGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`) VALUES
 (1, 'Anuj Kumar', '9999857868', 'anuj@gmail.com', 'Male', 27, 'O+', ' bdhdh dhf hd h', ' d hd hd fh d', '2017-06-30 20:14:16', 1, NULL),
 (2, 'dasdasd', '41241241241', 'dasdasd@dfdsf.com', 'Male', 34, 'AB-', ' fsdfds', ' fsdf', '2017-06-30 20:48:11', 1, NULL),
 (3, 'Ami', '42352352352', '', 'Male', 23, 'A+', NULL, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2017-07-01 07:21:21', 1, NULL),
@@ -83,10 +83,10 @@ INSERT INTO `tblblooddonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Gend
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblbloodgroup`
+-- Table structure for table `tblgroup`
 --
 
-CREATE TABLE `tblbloodgroup` (
+CREATE TABLE `tblgroup` (
   `id` int(11) NOT NULL,
   `BloodGroup` varchar(20) DEFAULT NULL,
   `PostingDate` timestamp NOT NULL DEFAULT current_timestamp()
@@ -96,21 +96,21 @@ CREATE TABLE `tblbloodgroup` (
 -- Dumping data for table `tblbloodgroup`
 --
 
-INSERT INTO `tblbloodgroup` (`id`, `BloodGroup`, `PostingDate`) VALUES
-(1, 'A-', '2022-04-30 20:33:50'),
-(2, 'AB-', '2022-04-30 20:34:00'),
-(3, 'O-', '2022-04-30 20:34:00'),
-(4, 'A-', '2022-04-30 20:34:00'),
-(5, 'A+', '2022-04-30 20:34:00'),
-(6, 'AB+', '2022-04-30 20:34:00');
+INSERT INTO `tblgroup` (`id`, `BloodGroup`, `PostingDate`) VALUES
+(1, 'Food', '2022-04-30 20:33:50'),
+(2, 'Clothes', '2022-04-30 20:34:00'),
+(3, 'Vessels', '2022-04-30 20:34:00'),
+(4, 'Footwear', '2022-04-30 20:34:00'),
+(5, 'Stationary', '2022-04-30 20:34:00'),
+(6, 'Gadgets', '2022-04-30 20:34:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblbloodrequirer`
+-- Table structure for table `tblrequirer`
 --
 
-CREATE TABLE `tblbloodrequirer` (
+CREATE TABLE `tblrequirer` (
   `ID` int(10) NOT NULL,
   `BloodDonarID` int(10) DEFAULT NULL,
   `name` varchar(250) DEFAULT NULL,
@@ -122,15 +122,15 @@ CREATE TABLE `tblbloodrequirer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblbloodrequirer`
+-- Dumping data for table `tblrequirer`
 --
 
-INSERT INTO `tblbloodrequirer` (`ID`, `BloodDonarID`, `name`, `EmailId`, `ContactNumber`, `BloodRequirefor`, `Message`, `ApplyDate`) VALUES
-(1, 6, 'Rakesh', 'rak@gmail.com', 7894561236, 'Father', 'Please help', '2022-05-17 11:57:24'),
+INSERT INTO `tblrequirer` (`ID`, `BloodDonarID`, `name`, `EmailId`, `ContactNumber`, `BloodRequirefor`, `Message`, `ApplyDate`) VALUES
+(1, 6, 'Rakesh', 'rak@gmail.com', 7894561236, 'Ophanage', 'Please help', '2022-05-17 11:57:24'),
 (2, 3, 'Mukesh', 'muk@gmail.com', 5896231478, 'Others', 'Please help', '2022-05-17 11:58:48'),
-(3, 6, 'Hitesh', 'hit@gmail.com', 1236547896, 'Brother', 'do the needful', '2022-05-17 12:02:12'),
-(4, 10, 'Rahul Singh', 'rahk@gmail.com', 2536251425, 'Mother', 'Please help me', '2022-07-29 01:51:52'),
-(5, 11, 'Anuj Kumar', 'ak@gmail.com', 8525232102, 'Others', 'Need blood on urgent basis', '2022-08-02 01:24:18');
+(3, 6, 'Hitesh', 'hit@gmail.com', 1236547896, 'Old age', 'do the needful', '2022-05-17 12:02:12'),
+(4, 10, 'Rahul Singh', 'rahk@gmail.com', 2536251425, 'Personal usage', 'Please help me', '2022-07-29 01:51:52'),
+(5, 11, 'Anuj Kumar', 'ak@gmail.com', 8525232102, 'Others', 'Need doanation on urgent basis', '2022-08-02 01:24:18');
 
 -- --------------------------------------------------------
 
@@ -200,21 +200,21 @@ ALTER TABLE `tbladmin`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tblblooddonars`
+-- Indexes for table `tbldonars`
 --
-ALTER TABLE `tblblooddonars`
+ALTER TABLE `tbldonars`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblbloodgroup`
+-- Indexes for table `tblgroup`
 --
-ALTER TABLE `tblbloodgroup`
+ALTER TABLE `tblgroup`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tblbloodrequirer`
+-- Indexes for table `tblrequirer`
 --
-ALTER TABLE `tblbloodrequirer`
+ALTER TABLE `tblrequirer`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -246,21 +246,21 @@ ALTER TABLE `tbladmin`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tblblooddonars`
+-- AUTO_INCREMENT for table `tbldonars`
 --
-ALTER TABLE `tblblooddonars`
+ALTER TABLE `tbldonars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `tblbloodgroup`
+-- AUTO_INCREMENT for table `tblgroup`
 --
-ALTER TABLE `tblbloodgroup`
+ALTER TABLE `tblgroup`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tblbloodrequirer`
+-- AUTO_INCREMENT for table `tblrequirer`
 --
-ALTER TABLE `tblbloodrequirer`
+ALTER TABLE `tblrequirer`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --

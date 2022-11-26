@@ -14,14 +14,14 @@ $address=$_POST['address'];
 $message=$_POST['message'];
 $status=1;
     $password=md5($_POST['password']);
-    $ret="select EmailId from tblblooddonars where EmailId=:email";
+    $ret="select EmailId from tbldonars where EmailId=:email";
     $query= $dbh -> prepare($ret);
     $query-> bindParam(':email', $email, PDO::PARAM_STR);
     $query-> execute();
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() == 0)
 {
-$sql="INSERT INTO  tblblooddonars(FullName,MobileNumber,EmailId,Age,Gender,BloodGroup,Address,Message,status,Password) VALUES(:fullname,:mobile,:email,:age,:gender,:blodgroup,:address,:message,:status,:password)";
+$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Gender,BloodGroup,Address,Message,status,Password) VALUES(:fullname,:mobile,:email,:age,:gender,:blodgroup,:address,:message,:status,:password)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
@@ -56,7 +56,7 @@ if(isset($_POST['login']))
   {
     $email=$_POST['email'];
     $password=md5($_POST['password']);
-    $sql ="SELECT id FROM tblblooddonars WHERE EmailId=:email and Password=:password";
+    $sql ="SELECT id FROM tbldonars WHERE EmailId=:email and Password=:password";
     $query=$dbh->prepare($sql);
     $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
@@ -190,6 +190,8 @@ foreach($results as $result)
 
                                     <a class="dropdown-item" href="profile.php">Profile</a>
                                     <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="request-delete.php">Request to delete Donation</a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="change-password.php">Change Password</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="request-received.php">Request Received</a>
@@ -291,7 +293,7 @@ foreach($results as $result)
                                 <div class="form-group">
                                     <label class="mb-2">Donation Group</label>
                                     <select name="bloodgroup" class="form-control" required>
-<?php $sql = "SELECT * from  tblbloodgroup ";
+<?php $sql = "SELECT * from  tblgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

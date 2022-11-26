@@ -10,9 +10,9 @@ $email=$_POST['email'];
 $contactno=$_POST['contactno'];
 $brf=$_POST['brf'];
 $message=$_POST['message'];
-$sql="INSERT INTO  tblrequirer(BloodDonarID,name,EmailId,ContactNumber,BloodRequirefor,Message) VALUES(:cid,:name,:email,:contactno,:brf,:message)";
+$sql="INSERT INTO  tbldeletion(name,EmailId,ContactNumber,deletefor,Message) VALUES(:name,:email,:contactno,:brf,:message)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':cid',$cid,PDO::PARAM_STR);
+
 $query->bindParam(':name',$name,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':contactno',$contactno,PDO::PARAM_STR);
@@ -23,11 +23,11 @@ $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
 
-echo '<script>alert("Request has been sent. We will contact you shortly.")</script>';
+echo '<script>alert("Request has been sent. We will Delete it .")</script>';
 }
 else 
 {
-echo "<script>alert('Something went wrong. Please try again.');</script>";  
+echo "<script>alert('Something went wrong try again later.');</script>";  
 }
 
 }
@@ -37,7 +37,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
 <html lang="zxx">
 
 <head>
-    <title>Donate Excess | Donation Requerer </title>
+    <title>Donate Excess | Donation Deletion </title>
     <!-- Meta tag Keywords -->
     
     <script>
@@ -86,7 +86,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
                 <li class="breadcrumb-item">
                     <a href="index.php">Home</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Donation Needed Person</li>
+                <li class="breadcrumb-item active" aria-current="page">Donation Deletion Request</li>
             </ol>
         </div>
     </div>
@@ -96,7 +96,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
     <div class="agileits-contact py-5">
         <div class="py-xl-5 py-lg-3">
             <div class="w3ls-titles text-center mb-5">
-                <h3 class="title">Contact For Donation</h3>
+                <h3 class="title">Donation Deletion Request</h3>
                 <span>
                     <!-- <i class="fas fa-user-md"></i> -->
                 </span>
@@ -105,7 +105,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
                 <div class="col-lg-5 w3_agileits-contact-left">
                 </div>
                 <div class="col-lg-7 contact-right-w3l">
-                    <h5 class="title-w3 text-center mb-5"><h5 class="title-w3 text-center mb-5">Fill following form for Donation</h5></h5>
+                    <h5 class="title-w3 text-center mb-5"><h5 class="title-w3 text-center mb-5">Fill following form for Donation Deletion Request</h5></h5>
                     <form action="#" method="post">
                         <div class="d-flex space-d-flex">
                             <div class="form-group grid-inputs">
@@ -124,20 +124,17 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
                                 <input type="email" class="form-control" id="email" name="email" required placeholder="Please enter your email address.">
                             </div>
                             <div class="form-group grid-inputs">
-                                <label for="recipient-name" class="col-form-label">Donation Required For</label>
+                                <label for="recipient-name" class="col-form-label">Donation Deletion Reason</label>
                                 <select  class="form-control" id="phone" name="brf">
-                                    <option value=""> Required For</option>
-                                    <option value="Orphanage">Orphanage</option>
-                                    <option value="Needy Ones">Needy Ones</option>
-                                    <option value="Old Age">Old Age</option>
-                                    <option value="Personal Usage">Personal Usage</option>
+                                    <option value="Donated">Donated</option>
+                                    <option value="No more Donation Available">No more Donation available </option>
                                     <option value="Others">Others</option>
                                     </select>
-                            </div>
+                            </div> 
                         </div>
 
                         <div class="form-group">
-                             <label for="recipient-name" class="col-form-label">Message</label>
+                             <label for="recipient-name" class="col-form-label">Message For Deletion</label>
                             <textarea rows="10" cols="100" class="form-control" id="message" name="message" placeholder="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                         <div class="form-group">

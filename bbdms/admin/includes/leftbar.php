@@ -2,7 +2,7 @@
 			<ul class="ts-sidebar-menu">
 			
 				<li class="ts-label">Main</li>
-				<li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+				<li><a href="dashboard.php"> Dashboard</a></li>
 			
 <li><a href="#"><i class="fa fa-files-o"></i> Donation Group</a>
 <ul>
@@ -19,6 +19,7 @@
 			<li><a href="manage-pages.php"><i class="fa fa-files-o"></i> Manage Pages</a></li>
 			<li><a href="update-contactinfo.php"><i class="fa fa-files-o"></i> Update Contact Info</a></li>
 <li><a href="request-received-bydonar.php"><i class="fa fa-users"></i> Request Received By Donar</a></li>
+<li><a href="delete-donation.php"><i class="fa fa-desktop"></i>Donation Deletion Request </a></li>
 
 			</ul>
 		</nav>

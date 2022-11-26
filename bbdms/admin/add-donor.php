@@ -19,7 +19,7 @@ $blodgroup=$_POST['bloodgroup'];
 $address=$_POST['address'];
 $message=$_POST['message'];
 $status=1;
-$sql="INSERT INTO  tblblooddonars(FullName,MobileNumber,EmailId,Age,Gender,BloodGroup,Address,Message,status) VALUES(:fullname,:mobile,:email,:age,:gender,:blodgroup,:address,:message,:status)";
+$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Gender,BloodGroup,Address,Message,status) VALUES(:fullname,:mobile,:email,:age,:gender,:blodgroup,:address,:message,:status)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
@@ -164,7 +164,7 @@ function isNumberKey(evt)
 
 <select name="bloodgroup" class="form-control" required>
 <option value="">Select</option>
-<?php $sql = "SELECT * from  tblbloodgroup ";
+<?php $sql = "SELECT * from  tblgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

@@ -11,7 +11,7 @@ else{
 if(isset($_POST['submit']))
 {
 $bloodgroup=$_POST['bloodgroup'];
-$sql="INSERT INTO  tblbloodgroup(BloodGroup) VALUES(:bloodgroup)";
+$sql="INSERT INTO  tblgroup(BloodGroup) VALUES(:bloodgroup)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':bloodgroup',$bloodgroup,PDO::PARAM_STR);
 $query->execute();

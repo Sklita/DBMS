@@ -114,7 +114,7 @@ include('includes/config.php');
 			<div class="row package-grids mt-5">
 				<?php 
 $status=1;
-$sql = "SELECT * from tblblooddonars where status=:status order by rand() limit 6";
+$sql = "SELECT * from tbldonars where status=:status order by rand() limit 6";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();

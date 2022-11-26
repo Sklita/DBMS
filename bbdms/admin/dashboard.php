@@ -60,7 +60,7 @@ else{
 											<div class="panel-body bk-primary text-light">
 												<div class="stat-panel text-center">
 <?php 
-$sql ="SELECT id from tblbloodgroup ";
+$sql ="SELECT id from tblgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -78,7 +78,7 @@ $bg=$query->rowCount();
 											<div class="panel-body bk-success text-light">
 												<div class="stat-panel text-center">
 												<?php 
-$sql1 ="SELECT id from tblblooddonars ";
+$sql1 ="SELECT id from tbldonars ";
 $query1 = $dbh -> prepare($sql1);;
 $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
@@ -115,7 +115,7 @@ $query=$query6->rowCount();
 											<div class="panel-body bk-info text-light">
 												<div class="stat-panel text-center">
 												<?php 
-$sql6 ="SELECT ID  from tblbloodrequirer ";
+$sql6 ="SELECT ID  from tblrequirer ";
 $query6 = $dbh -> prepare($sql6);;
 $query6->execute();
 $results6=$query6->fetchAll(PDO::FETCH_OBJ);
