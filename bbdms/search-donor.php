@@ -7,7 +7,7 @@ include('includes/config.php');
 <html lang="zxx">
 
 <head>
-	<title>Blood Bank Donar Management System | Search Blood Donor </title>
+	<title>Donate Excess | Search Donor </title>
 	<!-- Meta tag Keywords -->
 	
 	<script>
@@ -71,7 +71,7 @@ include('includes/config.php');
 
 
 <div class="col-lg-4 mb-4">
-<div class="font-italic">Blood Group<span style="color:red">*</span> </div>
+<div class="font-italic">Donation Group<span style="color:red">*</span> </div>
 <div><select name="bloodgroup" class="form-control" required>
 <?php $sql = "SELECT * from  tblbloodgroup ";
 $query = $dbh -> prepare($sql);
@@ -127,7 +127,7 @@ if($query->rowCount() > 0)
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Search Donor</h3>
 				<span>
-					<i class="fas fa-user-md"></i>
+					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
 			
 			</div>
@@ -154,7 +154,7 @@ if($query->rowCount() > 0)
         <td><?php echo htmlentities($result->Gender);?></td>
       </tr>
       <tr>
-        <td>Blood Group</td>
+        <td>Donation Group</td>
         <td><?php echo htmlentities($result->BloodGroup);?></td>
       </tr>
       <tr>

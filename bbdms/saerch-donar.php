@@ -7,7 +7,7 @@ include('includes/config.php');
 <html lang="zxx">
 
 <head>
-	<title>Blood Bank Donar Management System | Blood Donor List </title>
+	<title>Donate Excess | Donor List </title>
 	<!-- Meta tag Keywords -->
 	
 	<script>
@@ -109,7 +109,7 @@ foreach($results as $result)
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Donar List</h3>
 				<span>
-					<i class="fas fa-user-md"></i>
+					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
 				<p class="mt-2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>

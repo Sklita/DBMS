@@ -98,7 +98,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
             <div class="w3ls-titles text-center mb-5">
                 <h3 class="title">Contact For Donation</h3>
                 <span>
-                    <i class="fas fa-user-md"></i>
+                    <!-- <i class="fas fa-user-md"></i> -->
                 </span>
             </div>
             <div class="d-flex">
@@ -127,10 +127,10 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
                                 <label for="recipient-name" class="col-form-label">Donation Required For</label>
                                 <select  class="form-control" id="phone" name="brf">
                                     <option value=""> Required For</option>
-                                    <option value="Father">Orphanage</option>
-                                    <option value="Mother">Needy Ones</option>
-                                    <option value="Brother">Old Age</option>
-                                    <option value="Sister">Personal Usage</option>
+                                    <option value="Orphanage">Orphanage</option>
+                                    <option value="Needy Ones">Needy Ones</option>
+                                    <option value="Old Age">Old Age</option>
+                                    <option value="Personal Usage">Personal Usage</option>
                                     <option value="Others">Others</option>
                                     </select>
                             </div>

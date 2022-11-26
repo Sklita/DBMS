@@ -94,7 +94,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Volunteer With Us</h3>
 				<span>
-					<i class="fas fa-user-md"></i>
+					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
 				<p class="mt-2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>

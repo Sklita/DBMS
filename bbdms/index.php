@@ -166,6 +166,7 @@ foreach($results as $result)
 					<li>Vessels</li>
 					<li>Gadgets</li>
 					<li>Stationary</li>
+					<li>Books</li>
                 </ul>
                 <p>A Donation of Excess helps ensure needy gets required, and also makes you feel better! </p>
 				<p>Donating to the needy not just benefits the recipient, it also benefits the donor in improving the physical, psychological, emotional and spiritual well-being. However, you need to do your research about the charitable organizations that share the same interest as yours which you need not do here .</p>

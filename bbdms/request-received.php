@@ -14,7 +14,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 <html lang="zxx">
 
 <head>
-	<title>Blood Bank Donar Management System !! Request Received</title>
+	<title> Donar Excess !! Request Received</title>
 	
 	<script>
 		addEventListener("load", function () {

@@ -80,7 +80,7 @@ foreach($results as $result)
 			<div class="w3ls-titles text-center mb-md-5 mb-4">
 				<h3 class="title"><?php   echo htmlentities($result->PageName); ?></h3>
 				<span>
-					<i class="fas fa-user-md"></i>
+					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
 			</div>
 			<p class="aboutpara text-center mx-auto"><?php  echo $result->detail; ?>.</p>
