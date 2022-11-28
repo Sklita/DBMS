@@ -74,7 +74,8 @@ $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
 if($query->rowCount() > 0)
-{
+{ 
+	
 foreach($results as $result)
 { ?>
 			<div class="w3ls-titles text-center mb-md-5 mb-4">

@@ -9,7 +9,7 @@ include('includes/config.php');
 <head>
 	<title>Donate Excess | Home Page</title>
 	
-	<script>
+	<script> 
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);

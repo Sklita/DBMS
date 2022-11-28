@@ -160,7 +160,6 @@ $totalreuqests=$query6->rowCount();
 			scaleBeginAtZero : true,
 			multiTooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
 		}); 
-		
 		// Pie Chart from doughutData
 		var doctx = document.getElementById("chart-area3").getContext("2d");
 		window.myDoughnut = new Chart(doctx).Pie(doughnutData, {responsive : true});

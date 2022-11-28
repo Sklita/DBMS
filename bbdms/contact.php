@@ -18,7 +18,6 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-
 echo '<script>alert("Query Sent. We will contact you shortly.")</script>';
 }
 else 

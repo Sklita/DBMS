@@ -99,7 +99,6 @@ else{
 						<?php
 if(isset($_POST['search']))
 { 
-
 $sdata=$_POST['searchdata'];
   ?>
   <h4 align="center">Result against "<?php echo $sdata;?>" keyword </h4>

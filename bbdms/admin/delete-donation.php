@@ -42,7 +42,6 @@ $sql = "DELETE FROM tbldeletion WHERE  ID=:did";
 $query = $dbh->prepare($sql);
 $query-> bindParam(':did',$did, PDO::PARAM_STR);
 $query -> execute();
-
 $msg="Record deleted Successfully ";
 $sql = "UPDATE tbldonars SET Status=:status WHERE  FullName=:ename";
 $query = $dbh->prepare($sql);

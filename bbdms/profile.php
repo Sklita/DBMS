@@ -38,7 +38,6 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 
 <head>
 	<title>Donate Excess !! Donor Profile</title>
-	
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);

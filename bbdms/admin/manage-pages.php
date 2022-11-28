@@ -19,7 +19,6 @@ $query -> execute();
 $msg="Page data updated  successfully";
 
 }
-
 ?>
 
 <!doctype html>

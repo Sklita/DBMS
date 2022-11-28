@@ -16,6 +16,7 @@ $query = $dbh->prepare($sql);
 $query->bindParam(':bloodgroup',$bloodgroup,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
+
 if($lastInsertId)
 {
 $msg="Blood Group Created successfully";

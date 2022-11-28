@@ -69,7 +69,6 @@ include('includes/config.php');
 <div class="row">
 
 
-
 <div class="col-lg-4 mb-4">
 <div class="font-italic">Donation Group<span style="color:red">*</span> </div>
 <div><select name="bloodgroup" class="form-control" required>

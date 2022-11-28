@@ -8,7 +8,7 @@ header('location:index.php');
 }
 else{
 if(isset($_REQUEST['hidden']))
-	{
+{
 $eid=intval($_GET['hidden']);
 $status="0";
 $sql = "UPDATE tbldonars SET Status=:status WHERE  id=:eid";

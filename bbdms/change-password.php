@@ -7,7 +7,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
   header('location:logout.php');
   } else{
 
-if(isset($_POST['change']))
+if(isset($_POST['change'])) 
 {
 $uid=$_SESSION['bbdmsdid'];
 $cpassword=md5($_POST['currentpassword']);

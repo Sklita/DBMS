@@ -138,7 +138,6 @@ foreach($results as $result)
         <td>Message</td>
         <td><?php echo htmlentities($result->Message);?></td>
       </tr>
-
     </tbody>
 </table>
 <a class="btn btn-primary" style="color:#fff"  href="contact-blood.php?cid=<?php echo $result->id;?>">Request</a>

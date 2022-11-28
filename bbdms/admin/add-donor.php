@@ -161,7 +161,6 @@ function isNumberKey(evt)
 <label class="col-sm-2 control-label">Donation Group<span style="color:red">*</span></label>
 <div class="col-sm-4">
 
-
 <select name="bloodgroup" class="form-control" required>
 <option value="">Select</option>
 <?php $sql = "SELECT * from  tblgroup ";

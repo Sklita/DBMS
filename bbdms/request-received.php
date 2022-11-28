@@ -147,7 +147,8 @@ foreach($results as $row)
                                         </tr>
                                     <?php } ?>
                                     </tbody>
-                                </table>
+                      
+								</table>
 				</div>
 				<div class="clerafix"></div>
 			</div>

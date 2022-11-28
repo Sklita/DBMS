@@ -22,7 +22,7 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-
+ 
 echo '<script>alert("Request has been sent. We will contact you shortly.")</script>';
 }
 else 

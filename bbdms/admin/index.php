@@ -22,7 +22,6 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 }
 
 }
-
 ?>
 <!doctype html>
 <html lang="en" class="no-js">

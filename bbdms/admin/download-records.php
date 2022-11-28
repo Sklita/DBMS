@@ -10,7 +10,7 @@ if(strlen($_SESSION['alogin'])==0)
 	}
 	else{?>
 <table border="1">
-									<thead>
+								<thead>
 										<tr>
 										<th>#</th>
 											<th>Name</th>

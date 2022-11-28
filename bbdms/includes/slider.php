@@ -10,7 +10,7 @@
                 <div class="carousel-item active" style="background-image: url('images/banner2.jpg')">
                     <div class="carousel-caption d-none d-md-block">
                        
-                    </div>
+                </div>
                 </div>
                 <!-- Slide Two - Set the background image for this slide in the line below -->
                 <div class="carousel-item" style="background-image: url('images/banner1.jpg')">
