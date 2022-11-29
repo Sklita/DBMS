@@ -45,10 +45,10 @@ echo '
 <td>'.$EmailId= $result->EmailId.'</td> 
 <td>'.$Gender= $result->Gender.'</td> 
 <td>'.$Age= $result->Age.'</td> 
- <td>'.$BloodGroup=$result->BloodGroup.'</td>	
-  <td>'.$BloodGroup=$result->Address.'</td>	 
-   <td>'.$BloodGroup=$result->Message.'</td>	
-  <td>'.$BloodGroup=$result->PostingDate.'</td>	 					
+ <td>'.$DonationGroup=$result->DonationGroup.'</td>	
+  <td>'.$DonationGroup=$result->Address.'</td>	 
+   <td>'.$DonationGroup=$result->Message.'</td>	
+  <td>'.$DonationGroup=$result->PostingDate.'</td>	 					
 </tr>  
 ';
 header("Content-type: application/octet-stream");

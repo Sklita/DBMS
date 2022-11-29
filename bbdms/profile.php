@@ -15,16 +15,16 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
     $emailid=$_POST['emailid'];
     $age=$_POST['age']; 
     $gender=$_POST['gender'];
-    $bloodgroup=$_POST['bloodgroup']; 
+    $donationgroup=$_POST['donationgroup']; 
     $address=$_POST['address'];
     $message=$_POST['message']; 
-  $sql="update tbldonars set FullName=:name,MobileNumber=:mno, Age=:age,Gender=:gender,BloodGroup=:bloodgroup,Address=:address,Message=:message  where id=:uid";
+  $sql="update tbldonars set FullName=:name,MobileNumber=:mno, Age=:age,Gender=:gender,DonationGroup=:donationgroup,Address=:address,Message=:message  where id=:uid";
      $query = $dbh->prepare($sql);
      $query->bindParam(':name',$name,PDO::PARAM_STR);
      $query->bindParam(':mno',$mno,PDO::PARAM_STR);
      $query->bindParam(':age',$age,PDO::PARAM_STR);
      $query->bindParam(':gender',$gender,PDO::PARAM_STR);
-     $query->bindParam(':bloodgroup',$bloodgroup,PDO::PARAM_STR);
+     $query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
      $query->bindParam(':address',$address,PDO::PARAM_STR);
      $query->bindParam(':message',$message,PDO::PARAM_STR);
      $query->bindParam(':uid',$uid,PDO::PARAM_STR);
@@ -146,8 +146,8 @@ foreach($results as $row)
 						</div>
 						<div class="form-group">
 							<label for="datepicker" class="col-form-label">Donation Group</label>
-							<select name="bloodgroup" class="form-control" required>
-								<option value="<?php  echo $row->BloodGroup;?>"><?php  echo $row->BloodGroup;?></option>
+							<select name="donationgroup" class="form-control" required>
+								<option value="<?php  echo $row->DonationGroup;?>"><?php  echo $row->DonationGroup;?></option>
 <?php $sql = "SELECT * from  tblgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
@@ -157,7 +157,7 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {               ?>  
-<option value="<?php echo htmlentities($result->BloodGroup);?>"><?php echo htmlentities($result->BloodGroup);?></option>
+<option value="<?php echo htmlentities($result->DonationGroup);?>"><?php echo htmlentities($result->DonationGroup);?></option>
 <?php }} ?>
 </select>
 						</div>

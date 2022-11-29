@@ -10,10 +10,10 @@ else{
 // Code for change password	
 if(isset($_POST['submit']))
 {
-$bloodgroup=$_POST['bloodgroup'];
-$sql="INSERT INTO  tblgroup(BloodGroup) VALUES(:bloodgroup)";
+$donationgroup=$_POST['donationgroup'];
+$sql="INSERT INTO  tblgroup(DonationGroup) VALUES(:donationgroup)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':bloodgroup',$bloodgroup,PDO::PARAM_STR);
+$query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 
@@ -105,7 +105,7 @@ $error="Something went wrong. Please try again";
 											<div class="form-group">
 												<label class="col-sm-4 control-label">Donation Group</label>
 												<div class="col-sm-8">
-													<input type="text" class="form-control" name="bloodgroup" id="bloodgroup" required>
+													<input type="text" class="form-control" name="donationgroup" id="donationgroup" required>
 												</div>
 											</div>
 											<div class="hr-dashed"></div>

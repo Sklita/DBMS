@@ -71,7 +71,7 @@ include('includes/config.php');
 
 <div class="col-lg-4 mb-4">
 <div class="font-italic">Donation Group<span style="color:red">*</span> </div>
-<div><select name="bloodgroup" class="form-control" required>
+<div><select name="donationgroup" class="form-control" required>
 <?php $sql = "SELECT * from  tblgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
@@ -81,7 +81,7 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {               ?>  
-<option value="<?php echo htmlentities($result->BloodGroup);?>"><?php echo htmlentities($result->BloodGroup);?></option>
+<option value="<?php echo htmlentities($result->DonationGroup);?>"><?php echo htmlentities($result->DonationGroup);?></option>
 <?php }} ?>
 </select>
 </div>
@@ -109,13 +109,13 @@ foreach($results as $result)
 				if(isset($_POST['sub']))
 {
 $status=1;
-$bloodgroup=$_POST['bloodgroup'];
+$donationgroup=$_POST['donationgroup'];
 $location=$_POST['location']; 
 
-$sql = "SELECT * from tbldonars where (status=:status and BloodGroup=:bloodgroup) ||  (Address=:location)";
+$sql = "SELECT * from tbldonars where (status=:status and DonationGroup=:donationgroup) ||  (Address=:location)";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
-$query->bindParam(':bloodgroup',$bloodgroup,PDO::PARAM_STR);
+$query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
 $query->bindParam(':location',$location,PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -154,7 +154,7 @@ if($query->rowCount() > 0)
       </tr>
       <tr>
         <td>Donation Group</td>
-        <td><?php echo htmlentities($result->BloodGroup);?></td>
+        <td><?php echo htmlentities($result->DonationGroup);?></td>
       </tr>
       <tr>
         <td>Mobile No.</td>

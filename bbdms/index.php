@@ -135,7 +135,7 @@ foreach($results as $result)
 					</div>
 					<div class="price-bottom p-4">
 						<h4 class="text-dark mb-3">Donation : <?php echo htmlentities($result->Gender);?></h4>
-						<p class="card-text"><b>Donation Type :</b> <?php echo htmlentities($result->BloodGroup);?></p>
+						<p class="card-text"><b>Donation Type :</b> <?php echo htmlentities($result->DonationGroup);?></p>
 						
 						<a class="btn btn-primary" style="color:#fff" href="contact-blood.php?cid=<?php echo $result->id;?>">Request</a>
 					</div>

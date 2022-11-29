@@ -120,7 +120,7 @@ foreach($results as $result)
 {				?>	
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
-											<td><?php echo htmlentities($result->BloodGroup);?></td>
+											<td><?php echo htmlentities($result->DonationGroup);?></td>
 											<td><?php echo htmlentities($result->PostingDate);?></td>
 <td>
 <a href="manage-bloodgroup.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>

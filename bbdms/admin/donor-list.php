@@ -167,7 +167,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->EmailId);?></td>
 											<td><?php echo htmlentities($result->Gender);?></td>
 											<td><?php echo htmlentities($result->Age);?></td>
-											<td><?php echo htmlentities($result->BloodGroup);?></td>
+											<td><?php echo htmlentities($result->DonationGroup);?></td>
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
 										

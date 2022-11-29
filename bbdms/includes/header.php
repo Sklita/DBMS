@@ -9,7 +9,7 @@ $mobile=$_POST['mobileno'];
 $email=$_POST['emailid'];
 $age=$_POST['age'];
 $gender=$_POST['gender'];
-$blodgroup=$_POST['bloodgroup'];
+$donationgroup=$_POST['donationgroup'];
 $address=$_POST['address'];
 $message=$_POST['message'];
 $status=1;
@@ -21,14 +21,14 @@ $status=1;
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() == 0)
 {
-$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Gender,BloodGroup,Address,Message,status,Password) VALUES(:fullname,:mobile,:email,:age,:gender,:blodgroup,:address,:message,:status,:password)";
+$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Gender,DonationGroup,Address,Message,status,Password) VALUES(:fullname,:mobile,:email,:age,:gender,:donationgroup,:address,:message,:status,:password)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':age',$age,PDO::PARAM_STR);
 $query->bindParam(':gender',$gender,PDO::PARAM_STR);
-$query->bindParam(':blodgroup',$blodgroup,PDO::PARAM_STR);
+$query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
 $query->bindParam(':address',$address,PDO::PARAM_STR);
 $query->bindParam(':message',$message,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
@@ -293,7 +293,7 @@ foreach($results as $result)
                                 </div>
                                 <div class="form-group">
                                     <label class="mb-2">Donation Group</label>
-                                    <select name="bloodgroup" class="form-control" required>
+                                    <select name="donationgroup" class="form-control" required>
 <?php $sql = "SELECT * from  tblgroup ";
 $query = $dbh -> prepare($sql);
 $query->execute();
@@ -303,7 +303,7 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {               ?>  
-<option value="<?php echo htmlentities($result->BloodGroup);?>"><?php echo htmlentities($result->BloodGroup);?></option>
+<option value="<?php echo htmlentities($result->DonationGroup);?>"><?php echo htmlentities($result->DonationGroup);?></option>
 <?php }} ?>
 </select>
                                 </div>

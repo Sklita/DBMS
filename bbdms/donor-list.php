@@ -112,7 +112,7 @@ foreach($results as $result)
       </tr>
       <tr>
         <td>Donation Group</td>
-        <td><?php echo htmlentities($result->BloodGroup);?></td>
+        <td><?php echo htmlentities($result->DonationGroup);?></td>
       </tr>
       <tr>
         <td>Mobile No.</td>
