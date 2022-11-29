@@ -57,7 +57,7 @@ CREATE TABLE `tbldonars` (
   `EmailId` varchar(100) DEFAULT NULL,
   `Gender` varchar(20) DEFAULT NULL,
   `Age` int(11) DEFAULT NULL,
-  `BloodGroup` varchar(20) DEFAULT NULL,
+  `DonationGroup` varchar(20) DEFAULT NULL,
   `Address` varchar(255) DEFAULT NULL,
   `Message` mediumtext DEFAULT NULL,
   `PostingDate` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -69,7 +69,7 @@ CREATE TABLE `tbldonars` (
 -- Dumping data for table `tbldonars`
 --
 
-INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Gender`, `Age`, `BloodGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`) VALUES
+INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Gender`, `Age`, `DonationGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`) VALUES
 (1, 'Anuj Kumar', '9999857868', 'anuj@gmail.com', 'Male', 27, 'O+', ' bdhdh dhf hd h', ' d hd hd fh d', '2017-06-30 20:14:16', 1, NULL),
 (2, 'dasdasd', '41241241241', 'dasdasd@dfdsf.com', 'Male', 34, 'AB-', ' fsdfds', ' fsdf', '2017-06-30 20:48:11', 1, NULL),
 (3, 'Ami', '42352352352', '', 'Male', 23, 'A+', NULL, ' Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', '2017-07-01 07:21:21', 1, NULL),
@@ -88,15 +88,15 @@ INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Gender`, 
 
 CREATE TABLE `tblgroup` (
   `id` int(11) NOT NULL,
-  `BloodGroup` varchar(20) DEFAULT NULL,
+  `DonationGroup` varchar(20) DEFAULT NULL,
   `PostingDate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblbloodgroup`
+-- Dumping data for table `tblgroup`
 --
 
-INSERT INTO `tblgroup` (`id`, `BloodGroup`, `PostingDate`) VALUES
+INSERT INTO `tblgroup` (`id`, `DonationGroup`, `PostingDate`) VALUES
 (1, 'Food', '2022-04-30 20:33:50'),
 (2, 'Clothes', '2022-04-30 20:34:00'),
 (3, 'Vessels', '2022-04-30 20:34:00'),
