@@ -10,7 +10,7 @@
 <li><a href="manage-bloodgroup.php">Manage Donation Group</a></li>
 </ul>
 </li>
-
+<!-- <li><a href="add-donor.php"><i class="fa fa-users"></i> Add New Donor</a></li> -->
 				
 				<li><a href="donor-list.php"><i class="fa fa-users"></i> Donor List</a></li>
 

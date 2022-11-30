@@ -14,18 +14,18 @@ $fullname=$_POST['fullname'];
 $mobile=$_POST['mobileno'];
 $email=$_POST['emailid'];
 $age=$_POST['age'];
-$gender=$_POST['gender'];
+$donation=$_POST['donation'];
 $donationgroup=$_POST['donationgroup'];
 $address=$_POST['address'];
 $message=$_POST['message'];
 $status=1;
-$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Gender,DonationGroup,Address,Message,status) VALUES(:fullname,:mobile,:email,:age,:gender,:donationgroup,:address,:message,:status)";
+$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status) VALUES(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':age',$age,PDO::PARAM_STR);
-$query->bindParam(':gender',$gender,PDO::PARAM_STR);
+$query->bindParam(':donation',$donation,PDO::PARAM_STR);
 $query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
 $query->bindParam(':address',$address,PDO::PARAM_STR);
 $query->bindParam(':message',$message,PDO::PARAM_STR);
@@ -150,13 +150,9 @@ function isNumberKey(evt)
 </div>
 
 <div class="form-group">
-<label class="col-sm-2 control-label">Gender <span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Donation <span style="color:red">*</span></label>
 <div class="col-sm-4">
-<select name="gender" class="form-control" required>
-<option value="">Select</option>
-<option value="Male">Male</option>
-<option value="Female">Female</option>
-</select>
+<input type="text" name="donation" class="form-control" required>
 </div>
 <label class="col-sm-2 control-label">Donation Group<span style="color:red">*</span></label>
 <div class="col-sm-4">

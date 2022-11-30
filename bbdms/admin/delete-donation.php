@@ -133,8 +133,8 @@ $query -> execute();
                                             <th>Mobile No</th>
 											<th>Deletion for</th>
 											<!-- <th>Gender</th> -->
-											<th>Donation Group</th>
-											<!-- <th>address</th> -->
+											
+											<th>Hide or Delete</th>
 											<th>Message </th>
 											<th>action </th>
 										</tr>
@@ -147,8 +147,8 @@ $query -> execute();
 											<th>Mobile No</th>
 											<th>Deletion for</th>
 											<!-- <th>Gender</th> -->
-											<th>Donation Group</th>
-											<th>address</th>
+											
+											<th>Hide or Delete</th>
 											<th>Message </th>
 											<th>action </th>
 										</tr>
@@ -170,7 +170,8 @@ foreach($results as $result)
                                             <td><?php echo htmlentities($result->EmailId);?></td>
 											<td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->deletefor);?></td>
-											<td><?php echo htmlentities($result->message);?></td>
+											<td><?php echo htmlentities($result->hideordelete);?></td>
+											<td><?php echo htmlentities($result->Message);?></td>
 											<td><?php echo htmlentities($result->ApplyDate);?></td>
 										<td>
 <?php if($result->status==0)

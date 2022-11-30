@@ -14,16 +14,16 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
     $mno=$_POST['mobileno']; 
     $emailid=$_POST['emailid'];
     $age=$_POST['age']; 
-    $gender=$_POST['gender'];
+    $donation=$_POST['donation'];
     $donationgroup=$_POST['donationgroup']; 
     $address=$_POST['address'];
     $message=$_POST['message']; 
-  $sql="update tbldonars set FullName=:name,MobileNumber=:mno, Age=:age,Gender=:gender,DonationGroup=:donationgroup,Address=:address,Message=:message  where id=:uid";
+  $sql="update tbldonars set FullName=:name,MobileNumber=:mno, Age=:age,Donation=:donation,DonationGroup=:donationgroup,Address=:address,Message=:message  where id=:uid";
      $query = $dbh->prepare($sql);
      $query->bindParam(':name',$name,PDO::PARAM_STR);
      $query->bindParam(':mno',$mno,PDO::PARAM_STR);
      $query->bindParam(':age',$age,PDO::PARAM_STR);
-     $query->bindParam(':gender',$gender,PDO::PARAM_STR);
+     $query->bindParam(':donation',$donation,PDO::PARAM_STR);
      $query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
      $query->bindParam(':address',$address,PDO::PARAM_STR);
      $query->bindParam(':message',$message,PDO::PARAM_STR);
@@ -135,8 +135,8 @@ foreach($results as $row)
 						</div>
 						<div class="form-group">
 							<label for="datepicker" class="col-form-label">Donation</label>
-							<input type="text" class="form-control" name="gender" id="gender" required="" value="<?php  echo $row->Gender;?>">
-							<!-- <select required="" class="form-control" name="gender"> -->
+							<input type="text" class="form-control" name="donation" id="donation" required="" value="<?php  echo $row->Donation;?>">
+							<!-- <select required="" class="form-control" name="donation"> -->
 
 								
 								<!-- <option value="Male">Male</option>

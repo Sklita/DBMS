@@ -9,14 +9,16 @@ $name=$_POST['fullname'];
 $email=$_POST['email'];
 $contactno=$_POST['contactno'];
 $brf=$_POST['brf'];
+$hidedel=$_POST['hidedel'];
 $message=$_POST['message'];
-$sql="INSERT INTO  tbldeletion(name,EmailId,ContactNumber,deletefor,Message) VALUES(:name,:email,:contactno,:brf,:message)";
+$sql="INSERT INTO  tbldeletion(name,EmailId,ContactNumber,deletefor,hideordelete,Message) VALUES(:name,:email,:contactno,:brf,:hidedel,:message)";
 $query = $dbh->prepare($sql);
 
 $query->bindParam(':name',$name,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':contactno',$contactno,PDO::PARAM_STR);
 $query->bindParam(':brf',$brf,PDO::PARAM_STR);
+$query->bindParam(':hidedel',$hidedel,PDO::PARAM_STR);
 $query->bindParam(':message',$message,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
@@ -133,7 +135,14 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                                     
                             </div> 
                         </div>
-
+                        <div class="form-group grid-inputs">
+                                <label for="recipient-name" class="col-form-label">Hide or Delete</label>
+                                <select  class="form-control" id="hidedel" name="hidedel">
+                                    <option value="Hide">Hide My account Without deleting</option>
+                                    <option value="DeleteMyAccount">Delete My Account </option>
+                                    </select>
+                                    
+                            </div> 
                         <div class="form-group">
                              <label for="recipient-name" class="col-form-label">Message For Deletion</label>
                             <textarea rows="10" cols="100" class="form-control" id="message" name="message" placeholder="Please enter your message" maxlength="999" style="resize:none"></textarea>

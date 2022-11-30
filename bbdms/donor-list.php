@@ -108,7 +108,7 @@ foreach($results as $result)
     <tbody>
       <tr>
         <th>Donation</th>
-        <td><?php echo htmlentities($result->Gender);?></td>
+        <td><?php echo htmlentities($result->Donation);?></td>
       </tr>
       <tr>
         <td>Donation Group</td>

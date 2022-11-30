@@ -144,7 +144,7 @@ foreach($results as $result)
 						</h3>
 					</div>
 					<div class="price-bottom p-4">
-						<h4 class="text-dark mb-3">Gender: <?php echo htmlentities($result->Gender);?></h4>
+						<h4 class="text-dark mb-3">Donation: <?php echo htmlentities($result->Donation);?></h4>
 						<p class="card-text"><b>Donation Group :</b> <?php echo htmlentities($result->DonationGroup);?></p>
 						<p class="card-text"><b>Mobile No :</b> <?php echo htmlentities($result->MobileNumber);?></p>
 						<p class="card-text"><b>Email ID :</b> <?php echo htmlentities($result->EmailId);?></p>

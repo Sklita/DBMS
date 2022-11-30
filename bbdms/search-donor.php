@@ -112,7 +112,8 @@ $status=1;
 $donationgroup=$_POST['donationgroup'];
 $location=$_POST['location']; 
 
-$sql = "SELECT * from tbldonars where (status=:status and DonationGroup=:donationgroup) ||  (Address=:location)";
+
+$sql = "SELECT * from tbldonars where (status=:status and DonationGroup=:donationgroup) &&  (Address=:location)";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
@@ -149,8 +150,8 @@ if($query->rowCount() > 0)
 
     <tbody>
       <tr>
-        <th>Gender</th>
-        <td><?php echo htmlentities($result->Gender);?></td>
+        <th>Donation</th>
+        <td><?php echo htmlentities($result->Donation);?></td>
       </tr>
       <tr>
         <td>Donation Group</td>
