@@ -49,7 +49,7 @@ include('includes/config.php');
 						<div class="banner-info_agile_w3ls">
 							<div class="container">
 								<h3>
-									<span>Avoid wastages,Donate Excess Manage Wastage</span>
+									<span>Helping You to Help Others</span>
 								</h3>
 								
 							</div>
@@ -72,9 +72,9 @@ include('includes/config.php');
 					<div class="banner-top3">
 						<div class="banner-info_agile_w3ls">
 							<div class="container">
-						<!-- 		<h3>"Sometimes money cannot save life
-									<span>but donated blood can</span>
-								</h3> -->
+								<h3>
+									<span>Donate Excess Manage Wastage</span>
+								</h3>
 				
 							</div>
 						</div>
@@ -108,7 +108,7 @@ include('includes/config.php');
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title text-white">Some of the Donar</h3>
 				<span>
-					<!-- <i class="fas fa-user-md text-white"></i> -->
+					
 				</span>
 			</div>
 			<div class="row package-grids mt-5">

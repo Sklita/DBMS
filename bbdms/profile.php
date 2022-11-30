@@ -96,7 +96,6 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Donor Profile</h3>
 				<span>
-					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
 			</div>
 			<div class="d-flex">
