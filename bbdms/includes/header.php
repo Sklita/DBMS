@@ -267,7 +267,7 @@ foreach($results as $result)
                             <form action="#" method="post"  name="signup" onsubmit="return checkpass();">
                                 <div class="form-group">
                                     <label>Full Name</label>
-                                     <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name">
+                                     <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name" required="">
                                 </div>
                                 <div class="form-group">
                                     <label>Mobile Number</label>
