@@ -7,7 +7,7 @@ include('includes/config.php');
 <html lang="zxx">
 
 <head>
-	<title>Donate Excess | Search Donor </title>
+	<title>Donate Excess | Donor List </title>
 	<!-- Meta tag Keywords -->
 	
 	<script>
@@ -57,7 +57,7 @@ include('includes/config.php');
 					<a href="index.php">Home</a>
 				</li>
 				<li class="breadcrumb-item "> <a href="search.php">Search</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Search on Donation Group and Loaction</li>
+				<li class="breadcrumb-item active" aria-current="page">Search on Donation Group</li>
 			</ol>
 		</div>
 	</div>
@@ -71,6 +71,7 @@ include('includes/config.php');
 
 
 <div class="col-lg-4 mb-4">
+<!-- <h3 class="title">Search Based On... </h3> -->
 <div class="font-italic">Donation Group<span style="color:red">*</span> </div>
 <div><select name="donationgroup" class="form-control" required>
 <?php $sql = "SELECT * from  tblgroup ";
@@ -89,10 +90,10 @@ foreach($results as $result)
 </div>
 
 
-<div class="col-lg-4 mb-4">
+<!-- <div class="col-lg-4 mb-4">
 <div class="font-italic">Location </div>
 <div><textarea class="form-control" name="location"></textarea></div>
-</div>
+</div> -->
 
 </div>
 
@@ -106,86 +107,51 @@ foreach($results as $result)
 
 	<div class="agileits-contact py-5">
 		<div class="py-xl-5 py-lg-3">
-			<?php
-				if(isset($_POST['sub']))
-{
-$status=1;
-$donationgroup=$_POST['donationgroup'];
-$location=$_POST['location']; 
-
-
-$sql = "SELECT * from tbldonars where (status=:status and DonationGroup=:donationgroup) &&  (Address=:location)";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':status',$status,PDO::PARAM_STR);
-$query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
-$query->bindParam(':location',$location,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{ ?>
-
 			<div class="w3ls-titles text-center mb-5">
-				<h3 class="title">Search Donor</h3>
+				<h3 class="title">Donar List</h3>
 				<span>
 					<!-- <i class="fas fa-user-md"></i> -->
 				</span>
-			
+				<p class="mt-2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 			<div class="d-flex">
 				
 				<div class="row package-grids mt-5" style="padding-left: 50px;">
-			<?php	foreach($results as $result)
+				<?php
+				if(isset($_POST['sub']))
+{
+$status=1;
+$donationgroup=$_POST['donationgroup'];
+
+
+$sql = "SELECT * from tbldonars where DonationGroup=:donationgroup";
+$query = $dbh -> prepare($sql);
+$query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $result)
 { ?>
-					<div class="col-md-6 pricing">
+					<div class="col-md-4 pricing">
 					
 					<div class="price-top">
 						<a href="single.html">
-							<img src="images/blood-donor.jpg" alt="Blood Donor" style="border:1px #000 solid" class="img-fluid" />
+							<img src="images/blood-donor.jpg" alt="" class="img-fluid" />
 						</a>
 						<h3><?php echo htmlentities($result->FullName);?>
 						</h3>
 					</div>
 					<div class="price-bottom p-4">
-				<table class="table table-bordered">
-
-    <tbody>
-      <tr>
-        <th>Donation</th>
-        <td><?php echo htmlentities($result->Donation);?></td>
-      </tr>
-      <tr>
-        <td>Donation Group</td>
-        <td><?php echo htmlentities($result->DonationGroup);?></td>
-      </tr>
-      <tr>
-        <td>Mobile No.</td>
-        <td><?php echo htmlentities($result->MobileNumber);?></td>
-      </tr>
-
-         <tr>
-        <td>Email ID</td>
-        <td><?php echo htmlentities($result->EmailId);?></td>
-      </tr>
-
-               <tr>
-        <td>Age</td>
-        <td><?php echo htmlentities($result->Age);?></td>
-      </tr>
-
-        <tr>
-        <td>Address</td>
-        <td><?php echo htmlentities($result->Address);?></td>
-      </tr>
-
-<tr>
-        <td>Message</td>
-        <td><?php echo htmlentities($result->Message);?></td>
-      </tr>
-
-    </tbody>
-</table>
-						<a class="btn btn-primary" style="color:#fff"  href="contact-blood.php?cid=<?php echo $result->id;?>">Request</a>
+						<h4 class="text-dark mb-3">Donation: <?php echo htmlentities($result->Donation);?></h4>
+						<p class="card-text"><b>Donation Group :</b> <?php echo htmlentities($result->DonationGroup);?></p>
+						<p class="card-text"><b>Mobile No :</b> <?php echo htmlentities($result->MobileNumber);?></p>
+						<p class="card-text"><b>Email ID :</b> <?php echo htmlentities($result->EmailId);?></p>
+						<p class="card-text"><b>Age :</b> <?php echo htmlentities($result->Age);?></p>
+						<p class="card-text"><b>Address :</b> <?php echo htmlentities($result->Address);?></p>
+						<p class="card-text"><b>Message :</b> <?php echo htmlentities($result->Message);?></p>
+						<a class="w3ls-button-agile"  href="contact-blood.php?cid=<?php echo $result->id;?>">Request</a>
 					</div>
 				</div> <?php }}
 else

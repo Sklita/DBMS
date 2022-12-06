@@ -56,8 +56,8 @@ include('includes/config.php');
 				<li class="breadcrumb-item">
 					<a href="index.php">Home</a>
 				</li>
-				<li class="breadcrumb-item "> <a href="search.php">Search</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Search on Donation Group and Loaction</li>
+				<li class="breadcrumb-item "><a href="search.php">Search</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Search on Location</li>
 			</ol>
 		</div>
 	</div>
@@ -70,23 +70,6 @@ include('includes/config.php');
 <div class="row">
 
 
-<div class="col-lg-4 mb-4">
-<div class="font-italic">Donation Group<span style="color:red">*</span> </div>
-<div><select name="donationgroup" class="form-control" required>
-<?php $sql = "SELECT * from  tblgroup ";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{               ?>  
-<option value="<?php echo htmlentities($result->DonationGroup);?>"><?php echo htmlentities($result->DonationGroup);?></option>
-<?php }} ?>
-</select>
-</div>
-</div>
 
 
 <div class="col-lg-4 mb-4">
@@ -114,10 +97,8 @@ $donationgroup=$_POST['donationgroup'];
 $location=$_POST['location']; 
 
 
-$sql = "SELECT * from tbldonars where (status=:status and DonationGroup=:donationgroup) &&  (Address=:location)";
+$sql = "SELECT * from tbldonars where (Address=:location)";
 $query = $dbh -> prepare($sql);
-$query->bindParam(':status',$status,PDO::PARAM_STR);
-$query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);
 $query->bindParam(':location',$location,PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

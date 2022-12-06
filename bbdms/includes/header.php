@@ -178,7 +178,7 @@ foreach($results as $result)
                                 <a class="nav-link" href="donor-list.php">Donor List</a>
                             </li>
                             <li class="nav-item mx-lg-4 my-lg-0 my-3">
-                                <a class="nav-link" href="search-donor.php">Search Donor</a>
+                                <a class="nav-link" href="search.php">Search Donor</a>
                             </li>
                             <?php if (strlen($_SESSION['bbdmsdid']!=0)) {?>
                             <li class="nav-item dropdown">
