@@ -14,7 +14,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 <html lang="zxx">
 
 <head>
-	<title> Donar Excess !! Request Received</title>
+	<title> Donation Management !! Request Received</title>
 	
 	<script>
 		addEventListener("load", function () {

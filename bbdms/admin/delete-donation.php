@@ -63,7 +63,7 @@ $query -> execute();
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Donate Excess | Deletion request </title>
+	<title>Donation Management | Deletion request </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

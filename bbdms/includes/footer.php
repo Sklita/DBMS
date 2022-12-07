@@ -5,8 +5,7 @@
           <div class="col-md-4 w3l-footer">
             <h2 class="mb-sm-3 mb-2">
               <a href="index.php" class="text-white font-italic font-weight-bold">
-                <span> </span> Donate Excess 
-                <!-- <i class="fas fa-syringe ml-2"></i> -->
+                <span> </span> Donation Management
               </a>
             </h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem

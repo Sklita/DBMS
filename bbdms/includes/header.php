@@ -86,25 +86,16 @@ echo "<script>alert('Invalid Details');</script>";
                             <!-- social icons -->
                             <ul class="col-lg-4 col-6 top-right-info text-center">
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.facebook.com/">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li class="mx-3">
-                                    <a href="#">
+                                    <a href="https://twitter.com/?lang=en-in">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li class="ml-3">
-                                    <a href="#">
-                                        <i class="fab fa-pinterest-p"></i>
-                                    </a>
-                                </li>
+                                
                             </ul><?php 
 $pagetype="contactus";
 $sql = "SELECT * from tblcontactusinfo";
@@ -152,8 +143,8 @@ foreach($results as $result)
                     <!-- logo -->
                     <h1>
                         <a class="navbar-brand font-weight-bold font-italic" href="index.php">
-                            <span>Donate Excess</span> 
-                            <!-- <i class="fas fa-syringe"></i> -->
+                            <span>Donation Management</span> 
+                            
                         </a>
                     </h1>
                     <!-- //logo -->
@@ -285,11 +276,7 @@ foreach($results as $result)
                                 <div class="form-group">
                                     <label class="mb-2">Donation</label>
                                     <input type="text" class="form-control" name="donation" placeholder="What to donate" required="">
-                                    <!-- <select name="donation" class="form-control" required>
-                                        <option value="">Select</option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                    </select> -->
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label class="mb-2">Donation Group</label>

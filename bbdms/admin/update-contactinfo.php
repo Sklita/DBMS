@@ -34,7 +34,7 @@ $msg="Info Updateed successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Donate Excess Management System | Admin Update Contact info</title>
+	<title>Donation Management | Admin Update Contact info</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

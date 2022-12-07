@@ -39,7 +39,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
 <html lang="zxx">
 
 <head>
-    <title>Donate Excess | Donation Deletion </title>
+    <title>Donation Management | Donation Deletion </title>
     <!-- Meta tag Keywords -->
     
     <script>

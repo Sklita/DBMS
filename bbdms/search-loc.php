@@ -7,7 +7,7 @@ include('includes/config.php');
 <html lang="zxx">
 
 <head>
-	<title>Donate Excess | Search Donor </title>
+	<title>Donation Management | Search Donor </title>
 	<!-- Meta tag Keywords -->
 	
 	<script>

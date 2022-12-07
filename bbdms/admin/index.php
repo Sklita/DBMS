@@ -33,7 +33,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Donate Excess | Admin Login</title>
+	<title>Donation Management | Admin Login</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -51,7 +51,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold text-light mt-4x">Donate Excess Management System Sign in</h1>
+						<h1 class="text-center text-bold text-light mt-4x">Donation Management Sign in</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">

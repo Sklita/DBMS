@@ -7,7 +7,7 @@ include('includes/config.php');
 <html lang="zxx">
 
 <head>
-	<title>Donate Excess | Home Page</title>
+	<title>Donation Management | Home Page</title>
 	
 	<script> 
 		addEventListener("load", function () {

@@ -46,7 +46,7 @@ $msg="Record deleted Successfully ";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Donate Excess |Admin Manage Queries   </title>
+	<title>Donation Management |Admin Manage Queries   </title>
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<!-- Sandstone Bootstrap CSS -->

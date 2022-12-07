@@ -40,7 +40,7 @@ $error="Something went wrong. Please try again";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Doante Excess | Admin Add-Donationgroup</title>
+	<title>Donation Management | Admin Add-Donationgroup</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

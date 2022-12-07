@@ -37,7 +37,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 <html lang="zxx">
 
 <head>
-	<title>Donate Excess !! Donor Profile</title>
+	<title>Donation Management !! Donor Profile</title>
 	<script>
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -136,11 +136,6 @@ foreach($results as $row)
 						<div class="form-group">
 							<label for="datepicker" class="col-form-label">Donation</label>
 							<input type="text" class="form-control" name="donation" id="donation" required="" value="<?php  echo $row->Donation;?>">
-							<!-- <select required="" class="form-control" name="donation"> -->
-
-								
-								<!-- <option value="Male">Male</option>
-								<option value="Female">Female</option> -->
 							</select>
 						</div>
 						<div class="form-group">

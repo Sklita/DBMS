@@ -57,7 +57,7 @@ include('includes/config.php');
 					<a href="index.php">Home</a>
 				</li>
 				<li class="breadcrumb-item "> <a href="search.php">Search</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Search on Donation Group and Loaction</li>
+				<li class="breadcrumb-item active" aria-current="page">Search on Donation Group and Location</li>
 			</ol>
 		</div>
 	</div>

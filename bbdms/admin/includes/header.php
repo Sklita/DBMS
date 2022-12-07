@@ -1,5 +1,5 @@
 <div class="brand clearfix">
-	<a href="dashboard.php" style="font-size: 20px; padding-top:1%; color:#fff">Donate Excess  </a>  
+	<a href="dashboard.php" style="font-size: 20px; padding-top:1%; color:#fff">Donation Management  </a>  
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
 			

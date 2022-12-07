@@ -32,7 +32,7 @@ $msg="Data Deleted successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>Doante Excess | Admin Manage Donation group</title>
+	<title>Donation Management | Admin Manage Donation group</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">

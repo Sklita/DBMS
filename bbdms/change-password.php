@@ -39,7 +39,7 @@ echo '<script>alert("Your current password is wrong")</script>';
 <html lang="zxx">
 
 <head>
-	<title>Donate Excess !! Change Password</title>
+	<title>Donation Management !! Change Password</title>
 	
 	<script>
 		addEventListener("load", function () {
