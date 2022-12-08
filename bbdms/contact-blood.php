@@ -97,9 +97,6 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
         <div class="py-xl-5 py-lg-3">
             <div class="w3ls-titles text-center mb-5">
                 <h3 class="title">Contact For Donation</h3>
-                <span>
-                    <!-- <i class="fas fa-user-md"></i> -->
-                </span>
             </div>
             <div class="d-flex">
                 <div class="col-lg-5 w3_agileits-contact-left">

@@ -73,7 +73,7 @@ include('includes/config.php');
 						<div class="banner-info_agile_w3ls">
 							<div class="container">
 								<h3>
-									<span>Donate Excess Manage Wastage</span>
+									<span>Donate To Needy</span>
 								</h3>
 				
 							</div>
@@ -91,8 +91,6 @@ include('includes/config.php');
 		<div class="d-flex container py-xl-3 py-lg-3">
 			<div class="banner-left-bottom-w3ls offset-lg-2 offset-md-1">
 				<h3 class="text-white my-3">We Manage Wastage or Donation like..</h3>
-				<!-- <p>all specialists have extensive practical experience and regularly training courses in educational centers of the
-					world</p> -->
 			</div>
 			<div class="button">
 				<a href="about.php" class="w3ls-button-agile">Read More
@@ -107,9 +105,7 @@ include('includes/config.php');
 		<div class="container py-xl-5 py-lg-3">
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title text-white">Some of the Donar</h3>
-				<span>
-					
-				</span>
+
 			</div>
 			<div class="row package-grids mt-5">
 				<?php 
@@ -152,9 +148,6 @@ foreach($results as $result)
 		<div class="container py-xl-5 py-lg-3">
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Doantion Groups </h3>
-				<span>
-					<!-- <i class="fas fa-user-md"></i> -->
-				</span>
 				<p class="mt-2">Donations of Anyone falls under the following groups...</p>
 			</div>
 			<div class="row">
@@ -166,8 +159,10 @@ foreach($results as $result)
 					<li>Vessels</li>
 					<li>Gadgets</li>
 					<li>Stationary</li>
+					<li>Footwear</li>
 					<li>Books</li>
                 </ul>
+				<br>
                 <p>A Donation of Excess helps ensure needy gets required, and also makes you feel better! </p>
 				<p>Donating to the needy not just benefits the recipient, it also benefits the donor in improving the physical, psychological, emotional and spiritual well-being. However, you need to do your research about the charitable organizations that share the same interest as yours which you need not do here .</p>
             </div>

@@ -109,10 +109,7 @@ foreach($results as $result)
 		<div class="py-xl-5 py-lg-3">
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Donar List</h3>
-				<span>
-					<!-- <i class="fas fa-user-md"></i> -->
-				</span>
-				<p class="mt-2">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p class="mt-2">List Based on Your Search </p>
 			</div>
 			<div class="d-flex">
 				

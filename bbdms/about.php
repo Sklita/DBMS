@@ -41,15 +41,12 @@ include('includes/config.php');
 
 <body>
 	<?php include('includes/header.php');?>
-
-	<!-- banner 2 -->
 	<div class="inner-banner-w3ls">
 		<div class="container">
 
 		</div>
-		<!-- //banner 2 -->
 	</div>
-	<!-- page details -->
+
 	<div class="breadcrumb-agile">
 		<div aria-label="breadcrumb">
 			<ol class="breadcrumb">
@@ -60,9 +57,6 @@ include('includes/config.php');
 			</ol>
 		</div>
 	</div>
-	<!-- //page details -->
-
-	<!-- about -->
 	<section class="about py-5">
 		<div class="container py-xl-5 py-lg-3">
 			<?php 
@@ -80,28 +74,18 @@ foreach($results as $result)
 { ?>
 			<div class="w3ls-titles text-center mb-md-5 mb-4">
 				<h3 class="title"><?php   echo htmlentities($result->PageName); ?></h3>
-				<span>
-					<!-- <i class="fas fa-user-md"></i> -->
-				</span>
 			</div>
 			<p class="aboutpara text-center mx-auto"><?php  echo $result->detail; ?>.</p>
 <?php } } ?>
 			
 		</div>
 	</section>
-	<!-- //about -->
-
-
 
 	<?php include('includes/footer.php');?>
 
-
-	<!-- Js files -->
-	<!-- JavaScript -->
+	
 	<script src="js/jquery-2.2.3.min.js"></script>
-	<!-- Default-JavaScript-File -->
 
-	<!-- banner slider -->
 	<script src="js/responsiveslides.min.js"></script>
 	<script>
 		$(function () {

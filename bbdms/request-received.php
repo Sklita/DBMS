@@ -85,9 +85,6 @@ return true;
 		<div class="py-xl-5 py-lg-3">
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Request Received</h3>
-				<span>
-					<!-- <i class="fas fa-user-md"></i> -->
-				</span>
 			</div>
 			
 			<div class="d-flex">

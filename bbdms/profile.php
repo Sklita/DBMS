@@ -84,7 +84,7 @@ if (strlen($_SESSION['bbdmsdid']==0)) {
 				<li class="breadcrumb-item">
 					<a href="index.php">Home</a>
 				</li>
-				<li class="breadcrumb-item active" aria-current="page">Donor Profile</li>
+				<li class="breadcrumb-item active" aria-current="page">Donar Profile</li>
 			</ol>
 		</div>
 	</div>
