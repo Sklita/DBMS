@@ -110,7 +110,7 @@ return true;
                                        
                                         <tr><?php
                                           $uid=$_SESSION['bbdmsdid'];
-$sql="SELECT tblrequirer.BloodDonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.BloodDonarID where tblrequirer.BloodDonarID=:uid";
+$sql="SELECT tblrequirer.DonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.DonarID where tblrequirer.DonarID=:uid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();

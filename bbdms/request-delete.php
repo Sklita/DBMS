@@ -104,11 +104,11 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                 <div class="col-lg-5 w3_agileits-contact-left">
                 </div>
                 <div class="col-lg-7 contact-right-w3l">
-                    <h5 class="title-w3 text-center mb-5"><h5 class="title-w3 text-center mb-5">Fill following form for Donation Deletion Request</h5></h5>
+                    <h5 class="title-w3 text-center mb-5"><h5 class="title-w3 text-center mb-5">Fill following form for Donation Deletion Request *(Please Enter Details As Per Registration Only)</h5></h5>
                     <form action="#" method="post">
                         <div class="d-flex space-d-flex">
                             <div class="form-group grid-inputs">
-                                <label for="recipient-name" class="col-form-label">Your Name</label>
+                                <label for="recipient-name" class="col-form-label">Your Name </label>
                                  <input type="text" class="form-control" id="name" name="fullname" placeholder="Please enter your name.">
                             </div>
                             <div class="form-group grid-inputs">
@@ -133,9 +133,8 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                             </div> 
                         </div>
                         <div class="form-group grid-inputs">
-                                <label for="recipient-name" class="col-form-label">Hide or Delete</label>
+                                <label for="recipient-name" class="col-form-label">Delete</label>
                                 <select  class="form-control" id="hidedel" name="hidedel">
-                                    <option value="Hide">Hide My account Without deleting</option>
                                     <option value="DeleteMyAccount">Delete My Account </option>
                                     </select>
                                     

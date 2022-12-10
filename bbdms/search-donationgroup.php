@@ -148,7 +148,7 @@ foreach($results as $result)
 						<p class="card-text"><b>Age :</b> <?php echo htmlentities($result->Age);?></p>
 						<p class="card-text"><b>Address :</b> <?php echo htmlentities($result->Address);?></p>
 						<p class="card-text"><b>Message :</b> <?php echo htmlentities($result->Message);?></p>
-						<a class="w3ls-button-agile"  href="contact-blood.php?cid=<?php echo $result->id;?>">Request</a>
+						<a class="w3ls-button-agile"  href="contact-donation.php?cid=<?php echo $result->id;?>">Request</a>
 					</div>
 				</div> <?php }}
 else

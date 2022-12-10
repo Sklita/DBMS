@@ -163,7 +163,7 @@ if($query->rowCount() > 0)
 
     </tbody>
 </table>
-						<a class="btn btn-primary" style="color:#fff"  href="contact-blood.php?cid=<?php echo $result->id;?>">Request</a>
+						<a class="btn btn-primary" style="color:#fff"  href="contact-donation.php?cid=<?php echo $result->id;?>">Request</a>
 					</div>
 				</div> <?php }}
 else

@@ -7,33 +7,6 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-if(isset($_REQUEST['hidden']))
-	{
-$eid=intval($_GET['hidden']);
-$status="0";
-$sql = "DELETE tbldeletion SET Status=:status WHERE  ID=:eid";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':status',$status, PDO::PARAM_STR);
-$query-> bindParam(':eid',$eid, PDO::PARAM_STR);
-$query -> execute();
-
-$msg="Donor details hidden Successfully";
-}
-
-
-if(isset($_REQUEST['public']))
-	{
-$aeid=intval($_GET['public']);
-$status=1;
-
-$sql = "UPDATE tbldeletion SET Status=:status WHERE  ID=:aeid";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':status',$status, PDO::PARAM_STR);
-$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
-$query -> execute();
-
-$msg="Donor details Deleted successfully";
-}
 //Code for Deletion
 if(isset($_REQUEST['del']))
 	{
@@ -48,6 +21,18 @@ $query = $dbh->prepare($sql);
 $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':ename',$ename, PDO::PARAM_STR);
 $query -> execute();
+}
+if(isset($_REQUEST['hide']))
+{
+$ename=intval($_GET['hide']);
+$status="0";
+$sql = "UPDATE tbldonars SET Status=:status WHERE  FullName=:ename";
+$query = $dbh->prepare($sql);
+$query -> bindParam(':status',$status, PDO::PARAM_STR);
+$query-> bindParam(':ename',$ename, PDO::PARAM_STR);
+$query -> execute();
+
+$msg="Donor details hidden Successfully";
 }
 
  ?>
@@ -114,11 +99,9 @@ $query -> execute();
 					<div class="col-md-12">
 
 						<h2 class="page-title">Donation Deletion Request</h2>
-
-						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
 							<div class="panel-heading">Donors Info</div>
-								<!-- <a href="download-records.php" style="font-size:16px;" class="btn btn-info">Download Donor List</a> -->
+
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
@@ -134,7 +117,7 @@ $query -> execute();
 											<th>Deletion for</th>
 											<!-- <th>Gender</th> -->
 											
-											<th>Hide or Delete</th>
+											<th> Delete</th>
 											<th>Message </th>
 											<th>action </th>
 										</tr>
@@ -148,7 +131,7 @@ $query -> execute();
 											<th>Deletion for</th>
 											<!-- <th>Gender</th> -->
 											
-											<th>Hide or Delete</th>
+											<th> Delete</th>
 											<th>Message </th>
 											<th>action </th>
 										</tr>
@@ -174,14 +157,9 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->Message);?></td>
 											<td><?php echo htmlentities($result->ApplyDate);?></td>
 										<td>
-<?php if($result->status==0)
-{?>
 
-<?php } else {?>
-
-
-<?php } ?>
 <a href="delete-donation.php?del=<?php echo htmlentities($result->ID);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> Delete</a>
+
 </td>
 
 										</tr>

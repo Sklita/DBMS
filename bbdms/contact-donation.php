@@ -10,7 +10,7 @@ $email=$_POST['email'];
 $contactno=$_POST['contactno'];
 $brf=$_POST['brf'];
 $message=$_POST['message'];
-$sql="INSERT INTO  tblrequirer(BloodDonarID,name,EmailId,ContactNumber,BloodRequirefor,Message) VALUES(:cid,:name,:email,:contactno,:brf,:message)";
+$sql="INSERT INTO  tblrequirer(DonarID,name,EmailId,ContactNumber,BloodRequirefor,Message) VALUES(:cid,:name,:email,:contactno,:brf,:message)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':cid',$cid,PDO::PARAM_STR);
 $query->bindParam(':name',$name,PDO::PARAM_STR);

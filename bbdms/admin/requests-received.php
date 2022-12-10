@@ -100,7 +100,7 @@ else{
                                        
                                         <tr><?php
                                           
-$sql="SELECT tblrequirer.BloodDonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid,tbldonars.FullName,tbldonars.MobileNumber from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.BloodDonarID where tbldonars.FullName like '%$sdata%' || tbldonars.MobileNumber like '%$sdata%'";
+$sql="SELECT tblrequirer.DonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid,tbldonars.FullName,tbldonars.MobileNumber from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.DonarID where tbldonars.FullName like '%$sdata%' || tbldonars.MobileNumber like '%$sdata%'";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
