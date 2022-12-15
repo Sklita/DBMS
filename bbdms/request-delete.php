@@ -11,6 +11,7 @@ $contactno=$_POST['contactno'];
 $brf=$_POST['brf'];
 $hidedel=$_POST['hidedel'];
 $message=$_POST['message'];
+$status=1;
 $sql="INSERT INTO  tbldeletion(name,EmailId,ContactNumber,deletefor,hideordelete,Message) VALUES(:name,:email,:contactno,:brf,:hidedel,:message)";
 $query = $dbh->prepare($sql);
 
@@ -136,6 +137,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                                 <label for="recipient-name" class="col-form-label">Delete</label>
                                 <select  class="form-control" id="hidedel" name="hidedel">
                                     <option value="DeleteMyAccount">Delete My Account </option>
+                                    <!-- <option value="HideMyAccount">Hide My Account </option> -->
                                     </select>
                                     
                             </div> 

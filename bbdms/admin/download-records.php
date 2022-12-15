@@ -17,7 +17,6 @@ if(strlen($_SESSION['alogin'])==0)
 											<th>Mobile No</th>
 											<th>Email</th>
 											<th>Age</th>
-											<th>Gender</th>
 											<th>Donation Group</th>
 											<th>Address</th>
 											<th>Message </th>
@@ -43,7 +42,6 @@ echo '
 <td>'.$complainNumber= $result->FullName.'</td> 
 <td>'.	$MobileNumber= $result->MobileNumber.'</td> 
 <td>'.$EmailId= $result->EmailId.'</td> 
-<td>'.$Gender= $result->Gender.'</td> 
 <td>'.$Age= $result->Age.'</td> 
  <td>'.$DonationGroup=$result->DonationGroup.'</td>	
   <td>'.$DonationGroup=$result->Address.'</td>	 

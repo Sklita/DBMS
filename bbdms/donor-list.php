@@ -120,10 +120,7 @@ foreach($results as $result)
         <td><?php echo htmlentities($result->EmailId);?></td>
       </tr>
 
-               <tr>
-        <td>Age</td>
-        <td><?php echo htmlentities($result->Age);?></td>
-      </tr>
+               
 
         <tr>
         <td>Address</td>

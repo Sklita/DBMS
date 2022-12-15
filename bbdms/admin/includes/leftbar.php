@@ -13,7 +13,7 @@
 <!-- <li><a href="add-donor.php"><i class="fa fa-users"></i> Add New Donor</a></li> -->
 				
 				<li><a href="donor-list.php"><i class="fa fa-users"></i> Donor List</a></li>
-
+				<li><a href="hidden.php"><i class="fa fa-users"></i> Hidden Donor List</a></li>
 				<li><a href="manage-conactusquery.php"><i class="fa fa-desktop"></i> Manage Conatctus Query</a></li>
 			<li><a href="manage-pages.php"><i class="fa fa-files-o"></i> Manage Pages</a></li>
 			<li><a href="update-contactinfo.php"><i class="fa fa-files-o"></i> Update Contact Info</a></li>
