@@ -5,11 +5,21 @@ error_reporting(0);
 include('includes/config.php');
 if (strlen($_SESSION['bbdmsdid']==0)) {
   header('location:logout.php');
-  } else{
+  } 
+  else {
+	if(isset($_REQUEST['del']))
+	{
+$did=intval($_GET['del']);
+$sql = "DELETE FROM tblrequirer WHERE  ID =:did";
+$query = $dbh->prepare($sql);
+$query-> bindParam(':did',$did, PDO::PARAM_STR);
+$query -> execute();
 
-
+$msg="Record Deleted Successfully ";
+ }
 
   ?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -95,7 +105,7 @@ return true;
                                     <thead>
                                          <tr>
                                          	<th>S.No</th>
-                                          
+                                          <!-- <th>ID</th> -->
                                             <th>Name</th>
                                             <th>Mobile Number</th>
                                             <th>Email</th>
@@ -103,6 +113,7 @@ return true;
                                             <th>Message</th>
                                             <th>Apply Date</th>
 											<th>Donate/Reject</th>
+											<!-- <th>Delete </th> -->
                                         </tr>
                                     </thead>
                                    
@@ -110,7 +121,7 @@ return true;
                                        
                                         <tr><?php
                                           $uid=$_SESSION['bbdmsdid'];
-$sql="SELECT tblrequirer.DonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.DonarID where tblrequirer.DonarID=:uid";
+$sql="SELECT tblrequirer.ID,tblrequirer.DonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.Requirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.DonarID where tblrequirer.DonarID=:uid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
@@ -121,10 +132,11 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>
                                             <td><?php echo htmlentities($cnt);?></td>
+											
                                         <td><?php  echo htmlentities($row->name);?></td>
                                              <td><?php  echo htmlentities($row->ContactNumber);?></td>
                                              <td><?php  echo htmlentities($row->EmailId);?></td>
-                                          <td><?php  echo htmlentities($row->BloodRequirefor);?></td>
+                                          <td><?php  echo htmlentities($row->Requirefor);?></td>
                                           
                      
                  <td><?php  echo htmlentities($row->Message);?> 
@@ -134,11 +146,14 @@ foreach($results as $row)
                                               <?php  echo htmlentities($row->ApplyDate);?>  
                                             </td>
 											<td>
-											<a class="btn btn-primary" style="color:#fff" href="mailto:<?php echo $row->EmailId;?>">Donate</a>
-											<a class="btn btn-danger" style="color:#fff"  href="mailto:<?php echo $row->EmailId;?>">Reject</a>
+											<a class="btn btn-success" style="color:#fff" href="mailto:<?php echo $row->EmailId;?>">Donate</a>
+											<a class="btn btn-primary" style="color:#fff"  href="mailto:<?php echo $row->EmailId;?>" >Reject</a>
 											</td>
+											
                                         </tr>
-                                    <?php $cnt=$cnt+1;}} else {?>
+                                    <?php $cnt=$cnt+1;
+								
+								}} else {?>
                                         <tr>
                                             <th colspan="8" style="color:red;"> No Record found</th>
                                         </tr>
@@ -146,6 +161,11 @@ foreach($results as $row)
                                     </tbody>
                       
 								</table>
+								<?php 
+ 
+ 	
+
+  ?>
 				</div>
 				<div class="clerafix"></div>
 			</div>

@@ -100,7 +100,7 @@ else{
                                        
                                         <tr><?php
                                           
-$sql="SELECT tblrequirer.DonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.BloodRequirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid,tbldonars.FullName,tbldonars.MobileNumber from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.DonarID where tbldonars.FullName like '%$sdata%' || tbldonars.MobileNumber like '%$sdata%'";
+$sql="SELECT tblrequirer.DonarID,tblrequirer.name,tblrequirer.EmailId,tblrequirer.ContactNumber,tblrequirer.Requirefor,tblrequirer.Message,tblrequirer.ApplyDate,tbldonars.id as donid,tbldonars.FullName,tbldonars.MobileNumber from  tblrequirer join tbldonars on tbldonars.id=tblrequirer.DonarID where tbldonars.FullName like '%$sdata%' || tbldonars.MobileNumber like '%$sdata%'";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
@@ -116,7 +116,7 @@ foreach($results as $row)
                                         <td><?php  echo htmlentities($row->name);?></td>
                                              <td><?php  echo htmlentities($row->ContactNumber);?></td>
                                              <td><?php  echo htmlentities($row->EmailId);?></td>
-                                          <td><?php  echo htmlentities($row->BloodRequirefor);?></td>
+                                          <td><?php  echo htmlentities($row->Requirefor);?></td>
                                           
                      
                  <td><?php  echo htmlentities($row->Message);?> 
