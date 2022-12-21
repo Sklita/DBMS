@@ -114,7 +114,7 @@ $donationgroup=$_POST['donationgroup'];
 $location=$_POST['location']; 
 
 
-$sql = "SELECT * from tbldonars where (status=:status and DonationGroup=:donationgroup) &&  (Address=:location)";
+$sql = "SELECT * from tbldonars where (status=:status and DonationGroup=:donationgroup) &&  (Address like CONCAT ('%', :location, '%'))";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':donationgroup',$donationgroup,PDO::PARAM_STR);

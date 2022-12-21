@@ -137,7 +137,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                                 <label for="recipient-name" class="col-form-label">Delete</label>
                                 <select  class="form-control" id="hidedel" name="hidedel">
                                     <option value="DeleteMyAccount">Delete My Account </option>
-                                    <!-- <option value="HideMyAccount">Hide My Account </option> -->
+                                    <option value="HideMyAccount">Hide My Account </option>
                                     </select>
                                     
                             </div> 

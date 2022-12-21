@@ -105,7 +105,7 @@ return true;
                                     <thead>
                                          <tr>
                                          	<th>S.No</th>
-                                          <!-- <th>ID</th> -->
+                                          <th>ID</th>
                                             <th>Name</th>
                                             <th>Mobile Number</th>
                                             <th>Email</th>
@@ -113,7 +113,7 @@ return true;
                                             <th>Message</th>
                                             <th>Apply Date</th>
 											<th>Donate/Reject</th>
-											<!-- <th>Delete </th> -->
+											<th>Delete </th>
                                         </tr>
                                     </thead>
                                    
@@ -132,7 +132,7 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>
                                             <td><?php echo htmlentities($cnt);?></td>
-											
+											<td><?php echo htmlentities($row->ID);?></td>
                                         <td><?php  echo htmlentities($row->name);?></td>
                                              <td><?php  echo htmlentities($row->ContactNumber);?></td>
                                              <td><?php  echo htmlentities($row->EmailId);?></td>
@@ -148,8 +148,9 @@ foreach($results as $row)
 											<td>
 											<a class="btn btn-success" style="color:#fff" href="mailto:<?php echo $row->EmailId;?>">Donate</a>
 											<a class="btn btn-primary" style="color:#fff"  href="mailto:<?php echo $row->EmailId;?>" >Reject</a>
-											</td>
 											
+										</td>
+											<td><a class="btn btn-danger" style="color:#fff"  href="request-received.php?del=<?php echo htmlentities($row->ID);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> Delete</a>	</td>
                                         </tr>
                                     <?php $cnt=$cnt+1;
 								

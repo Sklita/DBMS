@@ -97,7 +97,7 @@ $status=1;
 $name1=$_POST['name1']; 
 
 
-$sql = "SELECT * from tbldonars where (FullName=:name1)";
+$sql = "SELECT * from tbldonars where (FullName like CONCAT ('%', :name1, '%'))";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':name1',$name1,PDO::PARAM_STR);
 $query->execute();

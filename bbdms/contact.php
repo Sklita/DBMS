@@ -86,7 +86,18 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
 		</div>
 	</div>
 	<!-- //page details -->
-
+	<div class="banner-bottom py-5">
+		<div class="d-flex container py-xl-3 py-lg-3">
+			<div class="banner-left-bottom-w3ls offset-lg-2 offset-md-1">
+				<h3 class="text-white my-3">Why Become Volunteer..</h3>
+			</div>
+			<div class="button">
+				<a href="volunteer.php" class="w3ls-button-agile">Read More
+					<i class="fas fa-hand-point-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
 	<!-- contact -->
 	<div class="agileits-contact py-5">
 		<div class="py-xl-5 py-lg-3">

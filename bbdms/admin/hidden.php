@@ -101,12 +101,12 @@ $msg="Record deleted Successfully ";
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Donors List</h2>
+						<h2 class="page-title">Hidden Donors List</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Donors Info</div>
-								<a href="download-records.php" style="font-size:16px;" class="btn btn-info">Download Donor List</a>
+							<div class="panel-heading">Hidden Donors Info</div>
+								<!-- <a href="download-records.php" style="font-size:16px;" class="btn btn-info">Download Donor List</a> -->
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>

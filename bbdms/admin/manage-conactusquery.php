@@ -17,7 +17,7 @@ $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':eid',$eid, PDO::PARAM_STR);
 $query -> execute();
 
-$msg="Testimonial Successfully Inacrive";
+$msg="Volunteer Working";
 }
 
 if(isset($_REQUEST['del']))
@@ -29,6 +29,18 @@ $query-> bindParam(':did',$did, PDO::PARAM_STR);
 $query -> execute();
 
 $msg="Record deleted Successfully ";
+}
+if(isset($_REQUEST['lid']))
+	{
+		$lid=intval($_GET['lid']);
+		$status=1;
+		$sql = "UPDATE tblcontactusquery SET status=:status WHERE  id=:lid";
+		$query = $dbh->prepare($sql);
+		$query -> bindParam(':status',$status, PDO::PARAM_STR);
+		$query-> bindParam(':lid',$lid, PDO::PARAM_STR);
+		$query -> execute();
+		
+		$msg="Volunteer Working";
 }
 
 
@@ -95,7 +107,7 @@ $msg="Record deleted Successfully ";
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Contact Us Queries</h2>
+						<h2 class="page-title">Manage Volunteers Queries</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
@@ -145,11 +157,12 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
 											<td><?php echo htmlentities($result->PostingDate);?></td>
-																<?php if($result->status==1)
+<?php if($result->status==1)
 {
-	?><td>Read<br /> |
-		<a href="manage-conactusquery.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Delete?')" >Delete</a></td>
-<?php } else {?>
+	?><td><a href="manage-conactusquery.php?lid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to use same volunteer again?')" >Already Volunteered</a><br /> | 
+		<a href="manage-conactusquery.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Delete?')" >Delete</a>
+		</td>
+		<?php } else {?>
 
 <td><a href="manage-conactusquery.php?eid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to read?')" >Pending</a><br /> | 
 	<a href="manage-conactusquery.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Delete?')" >Delete</a>

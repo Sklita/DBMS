@@ -19,7 +19,7 @@ $lastInsertId = $dbh->lastInsertId();
 
 if($lastInsertId)
 {
-$msg="Blood Group Created successfully";
+$msg="Donation Group Created successfully";
 }
 else 
 {

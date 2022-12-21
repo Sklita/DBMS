@@ -22,8 +22,31 @@ $query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query-> bindParam(':ename',$ename, PDO::PARAM_STR);
 $query -> execute();
 }
+if(isset($_REQUEST['hide']))
+{
+$did=intval($_GET['hide']);
+$status=0;
+$sql = "UPDATE tbldeletion SET status=:status WHERE  ID=:did";
+$query = $dbh->prepare($sql);
+$query -> bindParam(':status',$status, PDO::PARAM_STR);
+$query-> bindParam(':did',$did, PDO::PARAM_STR);
+$query -> execute();
 
+$msg="Donor details hidden Successfully";
+}
+if(isset($_REQUEST['public']))
+	{
+$did=intval($_GET['public']);
+$status=1;
 
+$sql = "UPDATE tbldeletion SET status=:status WHERE  ID=:did";
+$query = $dbh->prepare($sql);
+$query -> bindParam(':status',$status, PDO::PARAM_STR);
+$query-> bindParam(':did',$did, PDO::PARAM_STR);
+$query -> execute();
+
+$msg="Donor details public";
+}
 
  ?>
 
@@ -107,6 +130,8 @@ $query -> execute();
 											<th>Deletion for</th>
 											<th> Delete</th>
 											<th>Message </th>
+											<th>Apply Date</th>
+											<th>Status</th>
 											<th>action </th>
 										</tr>
 									</thead>
@@ -119,6 +144,8 @@ $query -> execute();
 											<th>Deletion for</th>
 											<th> Delete</th>
 											<th>Message </th>
+											<th>Apply Date</th>
+											<th>Status</th>
 											<th>action </th>
 										</tr>
 									</tfoot>
@@ -142,9 +169,16 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->hideordelete);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
 											<td><?php echo htmlentities($result->ApplyDate);?></td>
-
+											<td><?php echo htmlentities($result->status);?></td>
 										<td>
+										<?php if($result->status==1)
+{?>
+<a href="delete-donation.php?hide=<?php echo htmlentities($result->ID);?>" onclick="return confirm('Do you really want to hidden this detail')" class="btn btn-primary"> Make it Hidden</a> 
+<?php } else {?>
 
+<a href="delete-donation.php?public=<?php echo htmlentities($result->ID);?>" onclick="return confirm('Do you really want to Public this detail')" class="btn btn-primary"> Make it Public</a>
+
+<?php } ?>
 <a href="delete-donation.php?del=<?php echo htmlentities($result->ID);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> Delete</a>
 
 </td>

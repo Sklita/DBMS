@@ -96,7 +96,7 @@ $status=1;
 $donationgroup=$_POST['donationgroup'];
 $location=$_POST['location']; 
 
-$sql = "SELECT * from tbldonars where (Address like :location)";
+$sql = "SELECT * from tbldonars where (Address like CONCAT ('%', :location, '%'))";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':location',$location,PDO::PARAM_STR);
 $query->execute();
