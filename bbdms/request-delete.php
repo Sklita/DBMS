@@ -40,7 +40,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
 <html lang="zxx">
 
 <head>
-    <title>Donation Management | Donation Deletion </title>
+    <title>Donation Management | Account Deletion / Hide </title>
     <!-- Meta tag Keywords -->
     
     <script>
@@ -89,7 +89,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                 <li class="breadcrumb-item">
                     <a href="index.php">Home</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Donation Deletion Request</li>
+                <li class="breadcrumb-item active" aria-current="page">Account Deletion / Hide Request</li>
             </ol>
         </div>
     </div>
@@ -99,13 +99,13 @@ echo "<script>alert('Something went wrong try again later.');</script>";
     <div class="agileits-contact py-5">
         <div class="py-xl-5 py-lg-3">
             <div class="w3ls-titles text-center mb-5">
-                <h3 class="title">Donation Deletion Request</h3>
+                <h3 class="title">Account Deletion / Hide Request</h3>
             </div>
             <div class="d-flex">
                 <div class="col-lg-5 w3_agileits-contact-left">
                 </div>
                 <div class="col-lg-7 contact-right-w3l">
-                    <h5 class="title-w3 text-center mb-5"><h5 class="title-w3 text-center mb-5">Fill following form for Donation Deletion Request *(Please Enter Details As Per Registration Only)</h5></h5>
+                    <h5 class="title-w3 text-center mb-5"><h5 class="title-w3 text-center mb-5">Fill following form for Account Deletion / Hide Request *(Please Enter Details As Per Registration Only)</h5></h5>
                     <form action="#" method="post">
                         <div class="d-flex space-d-flex">
                             <div class="form-group grid-inputs">
@@ -124,7 +124,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                                 <input type="email" class="form-control" id="email" name="email" required placeholder="Please enter your email address.">
                             </div>
                             <div class="form-group grid-inputs">
-                                <label for="recipient-name" class="col-form-label">Donation Deletion Reason</label>
+                                <label for="recipient-name" class="col-form-label">Account Deletion Reason</label>
                                 <select  class="form-control" id="phone" name="brf">
                                     <option value="Donated">Donated</option>
                                     <option value="No more Donation Available">No more Donation available </option>
@@ -134,7 +134,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                             </div> 
                         </div>
                         <div class="form-group grid-inputs">
-                                <label for="recipient-name" class="col-form-label">Delete</label>
+                                <label for="recipient-name" class="col-form-label">Delete/Hide</label>
                                 <select  class="form-control" id="hidedel" name="hidedel">
                                     <option value="DeleteMyAccount">Delete My Account </option>
                                     <option value="HideMyAccount">Hide My Account </option>
@@ -142,7 +142,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                                     
                             </div> 
                         <div class="form-group">
-                             <label for="recipient-name" class="col-form-label">Message For Deletion</label>
+                             <label for="recipient-name" class="col-form-label">Message For Deletion / Hiding</label>
                             <textarea rows="10" cols="100" class="form-control" id="message" name="message" placeholder="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                         <div class="form-group">

@@ -182,11 +182,11 @@ foreach($results as $result)
 
                                     <a class="dropdown-item" href="profile.php">Profile</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="request-delete.php">Request to Delete Donation Account</a>
-                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="change-password.php">Change Password</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="request-received.php">Request Received</a>
+                                    <a class="dropdown-item" href="request-received.php">Request Received By Seeker</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="request-delete.php">Request Delete / Hide Account</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="logout.php">Logout</a>
                                 </div>
