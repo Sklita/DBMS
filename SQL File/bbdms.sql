@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3399:3399
--- Generation Time: Dec 14, 2022 at 10:12 AM
+-- Generation Time: Dec 28, 2022 at 11:13 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -62,7 +62,7 @@ CREATE TABLE `tblcontactusinfo` (
 --
 
 INSERT INTO `tblcontactusinfo` (`id`, `Address`, `EmailId`, `ContactNo`) VALUES
-(1, 'Donate Excess Management System , opposite to Akshaya Super Market 571235																						', 'test@test.com', '9632587419');
+(1, 'Donate Excess Management System , opposite to Akshaya Super Market 571235																						', 'donation@gmail.com', '9632587419');
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ CREATE TABLE `tblcontactusquery` (
   `ContactNumber` char(11) DEFAULT NULL,
   `Message` longtext DEFAULT NULL,
   `PostingDate` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` int(11) DEFAULT NULL
+  `status` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -85,7 +85,8 @@ CREATE TABLE `tblcontactusquery` (
 --
 
 INSERT INTO `tblcontactusquery` (`id`, `name`, `EmailId`, `ContactNumber`, `Message`, `PostingDate`, `status`) VALUES
-(8, 'priya', 'priya@gmail.com', '985632478', 'I want to volunteer and help people', '2022-11-23 10:33:53', NULL);
+(11, 'Sahana', 'sahana@gmail.com', '2365897412', 'I want to help people ', '2022-12-21 09:22:04', 1),
+(12, 'Aditya ', 'aditya@gmail.com', '876549125', 'I would like to help people by volunteering with organization ', '2022-12-22 06:56:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -101,22 +102,28 @@ CREATE TABLE `tbldeletion` (
   `deletefor` varchar(250) DEFAULT NULL,
   `hideordelete` varchar(250) DEFAULT NULL,
   `Message` mediumtext DEFAULT NULL,
-  `ApplyDate` timestamp NULL DEFAULT current_timestamp()
+  `ApplyDate` timestamp NULL DEFAULT current_timestamp(),
+  `status` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbldeletion`
 --
 
-INSERT INTO `tbldeletion` (`ID`, `name`, `EmailId`, `ContactNumber`, `deletefor`, `hideordelete`, `Message`, `ApplyDate`) VALUES
-(12, 'priya', 'priya@gmail.com', 7896541233, 'No more Donation Available', 'DeleteMyAccount', 'delete my account as i have donated', '2022-12-07 15:44:54'),
-(14, 'priya', 'priya@gmail.com', 7896541233, 'Others', 'DeleteMyAccount', ',mmmmmmmmmmmmmmm', '2022-12-09 16:35:03');
+INSERT INTO `tbldeletion` (`ID`, `name`, `EmailId`, `ContactNumber`, `deletefor`, `hideordelete`, `Message`, `ApplyDate`, `status`) VALUES
+(17, 'Alan', 'alan@gmail.com', 7896541223, 'No more Donation Available', 'DeleteMyAccount', 'mskskjs', '2022-12-15 11:56:37', 0),
+(18, 'Alex', 'alex@gmail.com', 7899655441, 'Others', 'DeleteMyAccount', 'kskjk', '2022-12-15 12:30:57', 0),
+(19, 'Bob', 'bob@gmail.com', 7896541223, 'Donated', 'DeleteMyAccount', 'kkkkkkk', '2022-12-15 13:04:43', 1);
 
 --
 -- Triggers `tbldeletion`
 --
 DELIMITER $$
 CREATE TRIGGER `deletion` AFTER DELETE ON `tbldeletion` FOR EACH ROW DELETE FROM tbldonars WHERE FullName=OLD.name
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `up_profile` AFTER UPDATE ON `tbldeletion` FOR EACH ROW UPDATE tbldonars SET tbldonars.status=new.status where tbldonars.FullName=new.name
 $$
 DELIMITER ;
 
@@ -147,17 +154,23 @@ CREATE TABLE `tbldonars` (
 
 INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Donation`, `Age`, `DonationGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`) VALUES
 (6, 'Ashu Misra', '7797987981', 'ashu@gmail.com', 'Student Calculator ', 35, 'Gadgets', 'H-900, Ravinderpuri colony, Varanasi', ' Call me if Calculators are required I have 2 extra Calculators', '2022-05-17 12:43:41', 1, '202cb962ac59075b964b07152d234b70'),
-(9, 'Test Demo', '9789797979', 'test@gmail.com', 'Mugs Vessels', 56, 'Vessels', 'Allahabad', ' gjhgjhgjhghjghj', '2022-05-21 06:09:08', 1, '202cb962ac59075b964b07152d234b70'),
-(10, 'John Doe', '1236547890', 'johnd@gmail.com', 'Sports Shoes', 25, 'Footwear', 'A 5623 XYZ Street New Delhi', 'Footwear for needy sports students , new one of size 7', '2022-07-29 01:50:58', 1, 'f925916e2754e5e03f75dd58a5733251'),
 (11, 'Amit Kumar', '1231231230', 'amitk@gmail.com', 'Notes', 26, 'Books', 'ABc Street Sector 20 Noida UP', 'Books for creating notes one dozen classmate books', '2022-08-02 01:22:52', 1, 'f925916e2754e5e03f75dd58a5733251'),
 (12, 'Riya', '8523697413', 'riya@gmail.com', 'Sweaters ', 32, 'Clothes', 'saraswathipuram mysore', ' I would like to donate the Sweaters for old age homes.', '2022-11-17 03:53:33', 1, 'e7505d0ab0f63e08810f6000a5f37ae9'),
-(15, 'Aishu', '9988776655', 'aishu@gmail.com', 'Engineering Mathemat', 26, 'Stationary', 'Mysore', ' I would like to donate books for needy ', '2022-11-21 16:01:44', 1, 'f598f436f5a2bb404404acd8568526fb'),
+(15, 'Aishu', '9988776655', 'aishu@gmail.com', 'BE Math Text', 26, 'Stationary', 'Mysore', ' I would like to donate engineering mathematics m1,2,3,4 books for needy ', '2022-11-21 16:01:44', 1, 'f598f436f5a2bb404404acd8568526fb'),
 (16, 'ambani', '7856941239', 'ambani@gmail.com', 'Computers', 59, 'Gadgets', 'Mumbai', ' I want to help needy engineering students', '2022-11-23 11:15:02', 1, 'f454c7b96c33c5946d120e2e88330d52'),
-(17, 'Alex', '9632145879', 'alex@gmail.com', 'Cooker and Grinder', 30, 'Vessels', 'Bengaluru', ' I want to donate the vessels for ashramas ', '2022-11-24 11:49:44', 1, 'b7e6124aeffd2498bdb4fb8c525c6ea3'),
+(17, 'Alex', '9632145879', 'alex@gmail.com', 'Cooker and Grinder', 30, 'Vessels', 'Bengaluru', ' I want to donate the vessels for ashramas ', '2022-11-24 11:49:44', 0, 'b7e6124aeffd2498bdb4fb8c525c6ea3'),
 (19, 'Saniya', '7856491239', 'saniya@gmail.com', 'Sweaters for needy ', 28, 'Clothes', 'Mangalore', ' I want to donate clothes like sweaters and jackets for needy ', '2022-11-29 06:21:27', 1, 'a0260154fe07352e36d3a432df569ad9'),
-(20, 'Bob', '1236547899', 'bob@gmail.com', 'Packed food ', 30, 'Food', 'Hubli', ' I want to donate packed food for needy ', '2022-11-29 06:25:24', 1, '5dda79243ec39dbdf6dd58b136149a08'),
-(21, 'Mohan ', '7896541233', 'mohan@gmail.com', 'Clothes Like Pants a', 52, 'Clothes', 'Mangalore', ' ', '2022-11-30 07:08:37', 1, '1aa79deaf05f0fe00a5d46b88145db92'),
-(26, 'priya', '7896541233', 'priya@gmail.com', 'Food Groceries ', 30, 'Food', 'Kodagu', 'Ready to donate groceries for Needy people ', '2022-12-07 15:43:10', 1, 'cfb077657c9b746245f0e9106c0f7660');
+(20, 'Bob', '1236547899', 'bob@gmail.com', 'Packed food ', 30, 'Food', 'Hubli Karnataka ', ' I want to donate packed food for needy ', '2022-11-29 06:25:24', 1, '5dda79243ec39dbdf6dd58b136149a08'),
+(21, 'Mohan ', '7896541233', 'mohan@gmail.com', 'Clothes Like Pants', 52, 'Clothes', 'Mangalore', ' ', '2022-11-30 07:08:37', 1, '1aa79deaf05f0fe00a5d46b88145db92'),
+(28, 'Alan', '9874563321', 'alan@gmail.com', 'Sweaters ', 33, 'Clothes', 'Kuvempunagar mysore ', ' I want to donate sweaters to needy ', '2022-12-15 11:55:22', 0, '0541c626be6852ab369f571e974a7b30');
+
+--
+-- Triggers `tbldonars`
+--
+DELIMITER $$
+CREATE TRIGGER `deldon` AFTER DELETE ON `tbldonars` FOR EACH ROW DELETE FROM tblrequirer WHERE tblrequirer.DonarID=OLD.id
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -201,8 +214,8 @@ CREATE TABLE `tblpages` (
 --
 
 INSERT INTO `tblpages` (`id`, `PageName`, `type`, `detail`) VALUES
-(2, 'Why Become Donor', 'donor', '<span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 14px; text-align: justify;\">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</span>'),
-(3, 'About Us ', 'aboutus', '																				<div style=\"text-align: justify;\"><span style=\"font-size: 1em; color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif;\">Welcome to the&nbsp;</span><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif;\">Donate Excess Management System</span><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 1em;\">&nbsp;donor management system.</span></div><div style=\"text-align: justify;\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif;\">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat</span><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 1em;\"><br></span></div>\r\n										\r\n										');
+(2, 'Why Become Volunteer', 'Volunteer', '																				<span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\">Volunteering means giving your time and abilities to aid others (usually a nonprofit organization) without the want of financial compensation. Put simply, volunteering is a service to your community.</span><div><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\"><br></span></div><div><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\">Your Gains...<br></span><div><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\"><br></span><div><div style=\"\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\">Meet New People and Build Community</span></div><div style=\"\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\">Gain Knowledge and Understanding of Other Ways of Life</span></div><div style=\"\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\">Gain a Sense of Purpose and Become Happier</span></div><div style=\"\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\">Boost Your Self-Esteem</span></div><div style=\"\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\">Accrue the Health Benefits of Volunteering</span></div><div style=\"\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\"><br></span></div><div style=\"color: rgb(0, 0, 0); font-family: &quot;Nunito Sans&quot;, sans-serif; font-size: 18px;\"><br></div><div><h3 style=\"box-sizing: inherit; font-size: 27.5px; font-weight: 600; color: rgb(13, 140, 151); font-family: &quot;Open Sans Condensed&quot;; line-height: 1.2; margin-top: 8px !important; margin-bottom: 15px !important;\"><br></h3></div><div><br></div>\r\n										\r\n										</div></div></div>'),
+(3, 'About Us ', 'aboutus', '																														<div style=\"text-align: justify;\"><span style=\"font-size: 1em; color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif;\">&nbsp; &nbsp; &nbsp;<span style=\"font-weight: bold;\"> Welcome to the&nbsp;</span></span><span style=\"font-weight: bold;\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif;\">Donate Excess Management System</span><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 1em;\">&nbsp;donor management system.</span></span></div><div style=\"text-align: justify;\"><p class=\"MsoNormal\" style=\"margin: 0cm 21.6pt 8pt 13.5pt; line-height: 150%;\"><span lang=\"EN-US\" style=\"font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif\">“Donation\r\nManagement” is the online information and donor seeker connectivity provider\r\nwebsite that lets you know about the number of donors, donation type, location\r\nof the donor at the tip of the needy one. <o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\" style=\"margin: 0cm 21.6pt 8pt 13.5pt; line-height: 150%;\"><span lang=\"EN-US\" style=\"font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif\">Any\r\nseekers can easily search for the particular donation based on donor name,\r\nlocation, donation categories, donation group and location put together.<o:p></o:p></span></p>\r\n\r\n<p class=\"MsoNormal\" style=\"margin: 0cm 21.6pt 8pt 13.5pt; line-height: 150%;\"><span lang=\"EN-US\" style=\"font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif\">The\r\nrequirer can directly send the request to the donor without middle man and\r\nadmin can directly accesses all details about donor, manage pages of website.&nbsp;<o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin: 0cm 21.6pt 8pt 13.5pt; line-height: 150%;\"><span lang=\"EN-US\" style=\"font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif\"><img src=\"https://3.files.edl.io/a42c/20/01/08/212738-6bffe973-3738-4299-8f07-f9ee554d2e05.jpg\" alt=\"Something went wrong\" align=\"none\"><br></span></p></div><div style=\"text-align: justify;\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 1em;\"><br></span></div><div style=\"text-align: justify;\"><span style=\"color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; font-size: 1em;\"><br></span></div>\r\n										\r\n										\r\n										');
 
 -- --------------------------------------------------------
 
@@ -216,7 +229,7 @@ CREATE TABLE `tblrequirer` (
   `name` varchar(250) DEFAULT NULL,
   `EmailId` varchar(250) DEFAULT NULL,
   `ContactNumber` bigint(10) DEFAULT NULL,
-  `BloodRequirefor` varchar(250) DEFAULT NULL,
+  `Requirefor` varchar(250) DEFAULT NULL,
   `Message` mediumtext DEFAULT NULL,
   `ApplyDate` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -225,20 +238,14 @@ CREATE TABLE `tblrequirer` (
 -- Dumping data for table `tblrequirer`
 --
 
-INSERT INTO `tblrequirer` (`ID`, `DonarID`, `name`, `EmailId`, `ContactNumber`, `BloodRequirefor`, `Message`, `ApplyDate`) VALUES
-(1, 6, 'Rakesh', 'rak@gmail.com', 7894561236, 'Father', 'Please help', '2022-05-17 11:57:24'),
-(2, 3, 'Mukesh', 'muk@gmail.com', 5896231478, 'Others', 'Please help', '2022-05-17 11:58:48'),
-(3, 6, 'Hitesh', 'hit@gmail.com', 1236547896, 'Brother', 'do the needful', '2022-05-17 12:02:12'),
-(4, 10, 'Rahul Singh', 'rahk@gmail.com', 2536251425, 'Mother', 'Please help me', '2022-07-29 01:51:52'),
-(6, 12, 'priya', 'priya@gmail.com', 5469871236, 'Mother', 'i REQUIRE THIS ', '2022-11-17 04:01:06'),
+INSERT INTO `tblrequirer` (`ID`, `DonarID`, `name`, `EmailId`, `ContactNumber`, `Requirefor`, `Message`, `ApplyDate`) VALUES
 (7, 14, 'xyz', 'xyz@gmail.com', 9856321145, 'Others', 'I want for orphange', '2022-11-17 09:53:44'),
-(8, 13, 'preethi', 'preethi@gamil.com', 3214569877, 'Mother', 'xyz', '2022-11-23 10:58:36'),
 (9, 13, 'sahana', 'sahana@gmail.com', 2365987412, 'Orphanage', 'for orphans', '2022-11-23 11:11:02'),
 (10, 17, 'sadana', 'sadana@gmail.com', 7896541239, 'Others', 'I want vessels to donate for neighbor\'s who require this ', '2022-11-24 12:05:58'),
 (11, 18, 'sahana', 'sahana@gmail.com', 1236547891, 'Personal Usage', 'I want these books for my studies I\'m a student it would be helpful if you can give me this ', '2022-11-26 07:16:23'),
 (12, 26, 'susheela', 'susheela@gmail.com', 1236547888, 'Personal Usage', 'I need this please ', '2022-12-10 05:47:49'),
-(13, 20, 'preksha', 'preksha@gmail.com', 1236547899, 'Needy Ones', 'i need this ', '2022-12-10 06:08:06'),
-(14, 12, 'preethi', 'preethi@gamil.com', 78965412336, 'Others', 'I want This ', '2022-12-11 04:39:33');
+(14, 12, 'preethi', 'preethi@gamil.com', 78965412336, 'Others', 'I want This ', '2022-12-11 04:39:33'),
+(15, 20, 'leena', 'leena@gmail.com', 1487523699, 'Personal Usage', 'mmmmm', '2022-12-17 05:27:15');
 
 --
 -- Indexes for dumped tables
@@ -312,25 +319,25 @@ ALTER TABLE `tblcontactusinfo`
 -- AUTO_INCREMENT for table `tblcontactusquery`
 --
 ALTER TABLE `tblcontactusquery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbldeletion`
 --
 ALTER TABLE `tbldeletion`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbldonars`
 --
 ALTER TABLE `tbldonars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tblgroup`
 --
 ALTER TABLE `tblgroup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tblpages`
@@ -342,7 +349,7 @@ ALTER TABLE `tblpages`
 -- AUTO_INCREMENT for table `tblrequirer`
 --
 ALTER TABLE `tblrequirer`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

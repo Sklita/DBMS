@@ -230,7 +230,7 @@ foreach($results as $result)
                                 </div>
                                 <button type="submit" class="btn submit mb-4" name="login">Login</button>
                                 <p class="forgot-w3ls text-center pb-4">
-                                    <a href="#" class="text-white">Forgot your password?</a>
+                                    <!-- <a href="#" class="text-white">Forgot your password?</a> -->
                                 </p>
                                 <p class="account-w3ls text-center pb-4">
                                     Don't have an account?

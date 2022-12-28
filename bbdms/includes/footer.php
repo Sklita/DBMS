@@ -8,9 +8,7 @@
                 <span> </span> Donation Management
               </a>
             </h2>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-              aperiam,
-              aque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            
           </div>
           <div class="col-md-4 w3l-footer my-md-0 my-4">
             <h3 class="mb-sm-3 mb-2 text-white">Address</h3>
