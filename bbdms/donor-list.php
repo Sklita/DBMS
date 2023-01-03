@@ -77,7 +77,7 @@ include('includes/config.php');
 $status=1;
  
 
-$sql = "SELECT * from tbldonars where status=:status";
+$sql = "SELECT * from donar_det where status=:status";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();

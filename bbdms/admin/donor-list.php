@@ -141,7 +141,7 @@ $msg="Record deleted Successfully ";
 									</tfoot>
 									<tbody>
 
-<?php $sql = "SELECT * from  tbldonars ";
+<?php $sql = "SELECT * from  donar_det ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

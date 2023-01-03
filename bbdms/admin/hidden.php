@@ -143,7 +143,7 @@ $msg="Record deleted Successfully ";
 									</tfoot>
 									<tbody>
 
-<?php $sql = "SELECT * from  tbldonars WHERE status=0 ";
+<?php $sql = "SELECT * from  donar_det WHERE status=0 ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

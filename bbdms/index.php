@@ -147,7 +147,7 @@ foreach($results as $result)
 	<div class="screen-w3ls py-5">
 		<div class="container py-xl-5 py-lg-3">
 			<div class="w3ls-titles text-center mb-5">
-				<h3 class="title">Doantion Groups </h3>
+				<h3 class="title">Donation Groups </h3>
 				<p class="mt-2">Donations of Anyone falls under the following groups...</p>
 			</div>
 			<div class="row">
@@ -173,7 +173,7 @@ foreach($results as $result)
 
         <div class="row mb-4">
             <div class="col-md-8">
-            <h4 style="padding-top: 30px;">DONTIONS CAN BE ANY TYPE</h4>
+            <h4 style="padding-top: 30px;">DONATIONS CAN BE ANY TYPE</h4>
                 <p>
                   The most common donation type is food, followed by type clothes.
 				</p>

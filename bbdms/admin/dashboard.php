@@ -103,7 +103,7 @@ $results6=$query6->fetchAll(PDO::FETCH_OBJ);
 $query=$query6->rowCount();
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($query);?></div>
-													<div class="stat-panel-title text-uppercase">Total Quries</div>
+													<div class="stat-panel-title text-uppercase">Total Volunteer Request</div>
 												</div>
 											</div>
 											<a href="manage-conactusquery.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>

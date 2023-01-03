@@ -23,7 +23,7 @@ $msg="Donation Group Created successfully";
 }
 else 
 {
-$error="Something went wrong. Please try again";
+$error="Please Recheck Donation Group May Exist Already.";
 }
 
 }

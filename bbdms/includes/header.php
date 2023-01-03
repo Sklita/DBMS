@@ -21,7 +21,8 @@ $status=1;
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() == 0)
 {
-$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password) VALUES(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password)";
+// $sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password) VALUES(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password)";
+$sql="CALL in_donor(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
@@ -33,9 +34,9 @@ $query->bindParam(':address',$address,PDO::PARAM_STR);
 $query->bindParam(':message',$message,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
+if($query->execute())
+//$lastInsertId = $dbh->lastInsertId();
+//if($lastInsertId)
 {
 
 echo "<script>alert('You have signup  Scuccessfully');</script>";

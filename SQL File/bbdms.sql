@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3399:3399
--- Generation Time: Dec 28, 2022 at 11:13 AM
+-- Generation Time: Jan 03, 2023 at 05:58 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -20,6 +20,35 @@ SET time_zone = "+00:00";
 --
 -- Database: `bbdms`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `in_donor` (IN `fullname` VARCHAR(100), IN `mobile` CHAR(11), IN `email` VARCHAR(100), IN `age` INT(11), IN `donation` VARCHAR(20), IN `donationgroup` VARCHAR(20), IN `address` VARCHAR(255), IN `message` MEDIUMTEXT, IN `status` INT(1), IN `password` VARCHAR(250))   BEGIN
+	INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password) VALUES(fullname,mobile,email,age,donation,donationgroup,address,message,status,password);
+END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `donar_det`
+-- (See below for the actual view)
+--
+CREATE TABLE `donar_det` (
+`id` int(11)
+,`FullName` varchar(100)
+,`MobileNumber` char(11)
+,`EmailId` varchar(100)
+,`Donation` varchar(20)
+,`DonationGroup` varchar(20)
+,`Address` varchar(255)
+,`Message` mediumtext
+,`status` int(1)
+,`PostingDate` timestamp
+);
 
 -- --------------------------------------------------------
 
@@ -161,8 +190,9 @@ INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Donation`
 (17, 'Alex', '9632145879', 'alex@gmail.com', 'Cooker and Grinder', 30, 'Vessels', 'Bengaluru', ' I want to donate the vessels for ashramas ', '2022-11-24 11:49:44', 0, 'b7e6124aeffd2498bdb4fb8c525c6ea3'),
 (19, 'Saniya', '7856491239', 'saniya@gmail.com', 'Sweaters for needy ', 28, 'Clothes', 'Mangalore', ' I want to donate clothes like sweaters and jackets for needy ', '2022-11-29 06:21:27', 1, 'a0260154fe07352e36d3a432df569ad9'),
 (20, 'Bob', '1236547899', 'bob@gmail.com', 'Packed food ', 30, 'Food', 'Hubli Karnataka ', ' I want to donate packed food for needy ', '2022-11-29 06:25:24', 1, '5dda79243ec39dbdf6dd58b136149a08'),
-(21, 'Mohan ', '7896541233', 'mohan@gmail.com', 'Clothes Like Pants', 52, 'Clothes', 'Mangalore', ' ', '2022-11-30 07:08:37', 1, '1aa79deaf05f0fe00a5d46b88145db92'),
-(28, 'Alan', '9874563321', 'alan@gmail.com', 'Sweaters ', 33, 'Clothes', 'Kuvempunagar mysore ', ' I want to donate sweaters to needy ', '2022-12-15 11:55:22', 0, '0541c626be6852ab369f571e974a7b30');
+(28, 'Alan', '9874563321', 'alan@gmail.com', 'Sweaters ', 33, 'Clothes', 'Kuvempunagar mysore ', ' I want to donate sweaters to needy ', '2022-12-15 11:55:22', 0, '0541c626be6852ab369f571e974a7b30'),
+(29, 'Ramya', '9865471236', 'ramya@gmail.com', 'Blankets ', 36, 'Clothes', 'Banashankari Bangalore', ' I want to donate Blankets for needy ', '2023-01-02 15:39:33', 1, '40799c8e6e6abfffc45c40e5b3766bbb'),
+(30, 'Catherine ', '7896541236', 'catherine@gmail.com', 'Sweaters', 26, 'Clothes', 'JP nagar Mysore', ' I want to for needy ', '2023-01-03 04:56:20', 1, '541fa46ad074a573ca5e20bb4938c951');
 
 --
 -- Triggers `tbldonars`
@@ -245,7 +275,17 @@ INSERT INTO `tblrequirer` (`ID`, `DonarID`, `name`, `EmailId`, `ContactNumber`, 
 (11, 18, 'sahana', 'sahana@gmail.com', 1236547891, 'Personal Usage', 'I want these books for my studies I\'m a student it would be helpful if you can give me this ', '2022-11-26 07:16:23'),
 (12, 26, 'susheela', 'susheela@gmail.com', 1236547888, 'Personal Usage', 'I need this please ', '2022-12-10 05:47:49'),
 (14, 12, 'preethi', 'preethi@gamil.com', 78965412336, 'Others', 'I want This ', '2022-12-11 04:39:33'),
-(15, 20, 'leena', 'leena@gmail.com', 1487523699, 'Personal Usage', 'mmmmm', '2022-12-17 05:27:15');
+(15, 20, 'leena', 'leena@gmail.com', 1487523699, 'Personal Usage', 'mmmmm', '2022-12-17 05:27:15'),
+(17, 20, 'harshitha ', 'harshitha@gmail.com', 8456328791, 'Needy Ones', 'i want this for people who work for construction ', '2023-01-02 14:38:39');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `donar_det`
+--
+DROP TABLE IF EXISTS `donar_det`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `donar_det`  AS SELECT `tbldonars`.`id` AS `id`, `tbldonars`.`FullName` AS `FullName`, `tbldonars`.`MobileNumber` AS `MobileNumber`, `tbldonars`.`EmailId` AS `EmailId`, `tbldonars`.`Donation` AS `Donation`, `tbldonars`.`DonationGroup` AS `DonationGroup`, `tbldonars`.`Address` AS `Address`, `tbldonars`.`Message` AS `Message`, `tbldonars`.`status` AS `status`, `tbldonars`.`PostingDate` AS `PostingDate` FROM `tbldonars``tbldonars`  ;
 
 --
 -- Indexes for dumped tables
@@ -285,7 +325,8 @@ ALTER TABLE `tbldonars`
 -- Indexes for table `tblgroup`
 --
 ALTER TABLE `tblgroup`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `DonationGroup` (`DonationGroup`);
 
 --
 -- Indexes for table `tblpages`
@@ -331,13 +372,13 @@ ALTER TABLE `tbldeletion`
 -- AUTO_INCREMENT for table `tbldonars`
 --
 ALTER TABLE `tbldonars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tblgroup`
 --
 ALTER TABLE `tblgroup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tblpages`
@@ -349,7 +390,7 @@ ALTER TABLE `tblpages`
 -- AUTO_INCREMENT for table `tblrequirer`
 --
 ALTER TABLE `tblrequirer`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
