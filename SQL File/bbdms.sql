@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3399:3399
--- Generation Time: Jan 03, 2023 at 05:58 AM
+-- Generation Time: Jan 04, 2023 at 08:00 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -192,7 +192,9 @@ INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Donation`
 (20, 'Bob', '1236547899', 'bob@gmail.com', 'Packed food ', 30, 'Food', 'Hubli Karnataka ', ' I want to donate packed food for needy ', '2022-11-29 06:25:24', 1, '5dda79243ec39dbdf6dd58b136149a08'),
 (28, 'Alan', '9874563321', 'alan@gmail.com', 'Sweaters ', 33, 'Clothes', 'Kuvempunagar mysore ', ' I want to donate sweaters to needy ', '2022-12-15 11:55:22', 0, '0541c626be6852ab369f571e974a7b30'),
 (29, 'Ramya', '9865471236', 'ramya@gmail.com', 'Blankets ', 36, 'Clothes', 'Banashankari Bangalore', ' I want to donate Blankets for needy ', '2023-01-02 15:39:33', 1, '40799c8e6e6abfffc45c40e5b3766bbb'),
-(30, 'Catherine ', '7896541236', 'catherine@gmail.com', 'Sweaters', 26, 'Clothes', 'JP nagar Mysore', ' I want to for needy ', '2023-01-03 04:56:20', 1, '541fa46ad074a573ca5e20bb4938c951');
+(30, 'Catherine ', '7896541236', 'catherine@gmail.com', 'Sweaters', 26, 'Clothes', 'JP nagar Mysore', ' I want to for needy ', '2023-01-03 04:56:20', 1, '541fa46ad074a573ca5e20bb4938c951'),
+(31, 'Taniya', '7845963214', 'taniya@gmail.com', 'Packed Food ', 52, 'Food', 'Rajarajeshwari Nagar Banaglore', ' i want to donate', '2023-01-03 05:05:42', 1, '41bace659244bbdbde6679fa3657839c'),
+(32, 'Daisy ', '8563214799', 'daisy@gmail.com', 'Preservable Food Ite', 35, 'Food', 'BEML Layout Srirampura Mysore', ' I would like to donate food items like biscuits , cookies which can preserved for needy ', '2023-01-04 06:58:33', 1, '264d54b1a203a5e5f29d4f6a34d85406');
 
 --
 -- Triggers `tbldonars`
@@ -372,7 +374,7 @@ ALTER TABLE `tbldeletion`
 -- AUTO_INCREMENT for table `tbldonars`
 --
 ALTER TABLE `tbldonars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tblgroup`
@@ -391,6 +393,16 @@ ALTER TABLE `tblpages`
 --
 ALTER TABLE `tblrequirer`
   MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `event_name` ON SCHEDULE EVERY 1 DAY STARTS '2023-01-03 14:13:36' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+UPDATE tbldonars set STATUS=0 where DonationGroup='Food' and PostingDate-NOW()>15;
+END$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
