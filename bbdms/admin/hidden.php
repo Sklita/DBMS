@@ -120,9 +120,10 @@ $msg="Record deleted Successfully ";
 											<th>Mobile No</th>
 											<th>Email</th>
 											<th>Age</th>
-											<th>Gender</th>
+											<th>Donation</th>
 											<th>Donation Group</th>
 											<th>address</th>
+
 											<th>Message </th>
 											<th>action </th>
 										</tr>
@@ -134,7 +135,7 @@ $msg="Record deleted Successfully ";
 											<th>Mobile No</th>
 											<th>Email</th>
 											<th>Age</th>
-											<th>Gender</th>
+											<th>Donation</th>
 											<th>Donation Group</th>
 											<th>address</th>
 											<th>Message </th>
@@ -143,7 +144,7 @@ $msg="Record deleted Successfully ";
 									</tfoot>
 									<tbody>
 
-<?php $sql = "SELECT * from  donar_det WHERE status=0 ";
+<?php $sql = "SELECT * from  dis_don WHERE status=0 ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -158,20 +159,22 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->MobileNumber);?></td>
 											<td><?php echo htmlentities($result->EmailId);?></td>
-											<td><?php echo htmlentities($result->Gender);?></td>
 											<td><?php echo htmlentities($result->Age);?></td>
+											<td><?php echo htmlentities($result->Donation);?></td>
+										
 											<td><?php echo htmlentities($result->DonationGroup);?></td>
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
+											<td><?php echo htmlentities($result->PostingDate);?></td>
 										
 										
 										<td>
 <?php if($result->status==1)
 {?>
-<a href="donor-list.php?hidden=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to hiidden this detail')" class="btn btn-primary"> Make it Hidden</a> 
+<a href="hidden.php?hidden=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to hiidden this detail')" class="btn btn-primary"> Make it Hidden</a> 
 <?php } else {?>
 
-<a href="donor-list.php?public=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Public this detail')" class="btn btn-primary"> Make it Public</a>
+<a href="hidden.php?public=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to Public this detail')" class="btn btn-primary"> Make it Public</a>
 
 <?php } ?>
 <a href="donor-list.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Do you really want to delete this record')" class="btn btn-danger" style="margin-top:1%;"> Delete</a>

@@ -70,7 +70,7 @@ $bg=$query->rowCount();
 													<div class="stat-panel-title text-uppercase">Listed Donation Groups</div>
 												</div>
 											</div>
-											<a href="manage-bloodgroup.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
+											<a href="manage-donationgroup.php" class="block-anchor panel-footer">Full Detail <i class="fa fa-arrow-right"></i></a>
 										</div>
 									</div>
 									<div class="col-md-4">
@@ -85,7 +85,7 @@ $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $regbd=$query1->rowCount();
 ?>
 													<div class="stat-panel-number h1 "><?php echo htmlentities($regbd);?></div>
-													<div class="stat-panel-title text-uppercase">Registered Donation Group</div>
+													<div class="stat-panel-title text-uppercase">Registered Donors </div>
 												</div>
 											</div>
 											<a href="donor-list.php" class="block-anchor panel-footer text-center">Full Detail &nbsp; <i class="fa fa-arrow-right"></i></a>

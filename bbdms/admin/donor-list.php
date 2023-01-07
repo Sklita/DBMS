@@ -119,11 +119,11 @@ $msg="Record deleted Successfully ";
 											<th>Name</th>
 											<th>Mobile No</th>
 											<th>Email</th>
-											
+											<th>Age</th>
 											<th>Donation Group</th>
-											<th>address</th>
+											<th>Address</th>
 											<th>Message </th>
-										
+											<th>Registered Date & Time </th>
 											<th>action </th>
 										</tr>
 									</thead>
@@ -133,11 +133,11 @@ $msg="Record deleted Successfully ";
 										<th>Name</th>
 											<th>Mobile No</th>
 											<th>Email</th>
-											
+											<th>Age</th>
 											<th>Donation Group</th>
-											<th>address</th>
+											<th>Address</th>
 											<th>Message </th>
-										
+										<th>Registered Date & Time</th>
 											<th>action </th>
 										</tr>
 									</tfoot>
@@ -145,7 +145,7 @@ $msg="Record deleted Successfully ";
 
 <?php
 
-$sql = "SELECT * from  donar_det ";
+$sql = "SELECT * from  dis_don";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -159,11 +159,11 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->MobileNumber);?></td>
 											<td><?php echo htmlentities($result->EmailId);?></td>
-											
+											<td><?php echo htmlentities($result->Age);?></td>
 											<td><?php echo htmlentities($result->DonationGroup);?></td>
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
-										
+											<td><?php echo htmlentities($result->PostingDate);?></td>
 									
 										
 										<td>

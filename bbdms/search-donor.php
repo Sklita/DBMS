@@ -141,7 +141,7 @@ if($query->rowCount() > 0)
 					
 					<div class="price-top">
 						<a href="single.html">
-							<img src="images/blood-donor.jpg" alt="Blood Donor" style="border:1px #000 solid" class="img-fluid" />
+							<img src="<?php echo htmlentities("./includes/uploads/".$result->pathless);?>" alt="Donor" width="430px" height="250px" style="border:1px #000 solid"  />
 						</a>
 						<h3><?php echo htmlentities($result->FullName);?>
 						</h3>

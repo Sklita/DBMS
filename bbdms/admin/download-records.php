@@ -6,7 +6,7 @@ include('includes/config.php');
 
 if(strlen($_SESSION['alogin'])==0)
 	{	
-	header("Location: index.php"); //
+	header("Location: index.php");
 	}
 	else{?>
 <table border="1">
@@ -21,6 +21,7 @@ if(strlen($_SESSION['alogin'])==0)
 											<th>Address</th>
 											<th>Message </th>
 											<th>posting date </th>
+											
 										</tr>
 									</thead>
 
@@ -44,15 +45,15 @@ echo '
 <td>'.$EmailId= $result->EmailId.'</td> 
 <td>'.$Age= $result->Age.'</td> 
  <td>'.$DonationGroup=$result->DonationGroup.'</td>	
-  <td>'.$DonationGroup=$result->Address.'</td>	 
-   <td>'.$DonationGroup=$result->Message.'</td>	
-  <td>'.$DonationGroup=$result->PostingDate.'</td>	 					
+  <td>'.$address=$result->Address.'</td>	 
+   <td>'.$message=$result->Message.'</td>	
+  <td>'.$postingdate=$result->PostingDate.'</td> 				
 </tr>  
 ';
-header("Content-type: application/octet-stream");
+ //header("Content-type: application/octet-stream");
 header("Content-Disposition: attachment; filename=".$filename."-report.xls");
-header("Pragma: no-cache");
-header("Expires: 0");
+ //header("Pragma: no-cache");
+ //header("Expires: 0");
 			$cnt++;
 			}
 	}
