@@ -12,6 +12,21 @@ $donation=$_POST['donation'];
 $donationgroup=$_POST['donationgroup'];
 $address=$_POST['address'];
 $message=$_POST['message'];
+$files=$_FILES["upfile"];
+$filename=$_FILES["upfile"]["name"];
+$filerror=$_FILES["upfile"]["error"];
+$filetemp=$_FILES["upfile"]["tmp_name"]; 
+
+$fileext= explode('.', $filename);
+$filecheck=strtolower(end($fileext));
+$fileextstored=array('png','jpg','jpeg');
+
+if(in_array($filecheck,$fileextstored))
+{
+    $destfile="C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/".$filename;
+    //C:\xampp\htdocs\BBDMS-Project-PHP\bbdms\includes\uploads
+    move_uploaded_file($filetemp,$destfile);
+}
 $status=1;
     $password=md5($_POST['password']);
     $ret="select EmailId from tbldonars where EmailId=:email";
@@ -21,8 +36,8 @@ $status=1;
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() == 0)
 {
-// $sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password) VALUES(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password)";
-$sql="CALL in_donor(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password)";
+ //$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password,image,pathless) VALUES(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password,:destfile,:filename)";
+$sql="CALL in_donor(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password,:destfile,:filename)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
@@ -34,12 +49,15 @@ $query->bindParam(':address',$address,PDO::PARAM_STR);
 $query->bindParam(':message',$message,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
+$query->bindParam(':destfile',$destfile,PDO::PARAM_STR);
+$query->bindParam(':filename',$filename,PDO::PARAM_STR);
 if($query->execute())
 //$lastInsertId = $dbh->lastInsertId();
 //if($lastInsertId)
 {
 
-echo "<script>alert('You have signup  Scuccessfully');</script>";
+echo "<script>alert('You have signed up successfully');</script>";
+//print_r($_FILES["upfile"]);
 }
 else
 {
@@ -256,10 +274,15 @@ foreach($results as $result)
                     <div class="modal-body">
                         <div class="login px-4 mx-auto mw-100">
                             <h5 class="text-center mb-4">Register Now</h5>
-                            <form action="#" method="post"  name="signup" onsubmit="return checkpass();">
-                                <div class="form-group">
+                            <form action="#" method="POST"  name="signup" onsubmit="return checkpass();" enctype="multipart/form-data">
+                               
+                            <div class="form-group">
                                     <label>Full Name</label>
                                      <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Profile Picture</label>
+                                     <input type="file" class="form-control" name="upfile" id="file" placeholder="Uplaod Donation Picture" required="">
                                 </div>
                                 <div class="form-group">
                                     <label>Mobile Number</label>
@@ -279,6 +302,7 @@ foreach($results as $result)
                                     <input type="text" class="form-control" name="donation" placeholder="What to donate" required="">
                                     
                                 </div>
+                                
                                 <div class="form-group">
                                     <label class="mb-2">Donation Group</label>
                                     <select name="donationgroup" class="form-control" required>

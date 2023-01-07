@@ -123,6 +123,7 @@ $msg="Record deleted Successfully ";
 											<th>Donation Group</th>
 											<th>address</th>
 											<th>Message </th>
+										
 											<th>action </th>
 										</tr>
 									</thead>
@@ -136,12 +137,15 @@ $msg="Record deleted Successfully ";
 											<th>Donation Group</th>
 											<th>address</th>
 											<th>Message </th>
+										
 											<th>action </th>
 										</tr>
 									</tfoot>
 									<tbody>
 
-<?php $sql = "SELECT * from  donar_det ";
+<?php
+
+$sql = "SELECT * from  donar_det ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -160,6 +164,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->Address);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
 										
+									
 										
 										<td>
 <?php if($result->status==1)

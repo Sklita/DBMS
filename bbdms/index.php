@@ -167,7 +167,7 @@ foreach($results as $result)
 				<p>Donating to the needy not just benefits the recipient, it also benefits the donor in improving the physical, psychological, emotional and spiritual well-being. However, you need to do your research about the charitable organizations that share the same interest as yours which you need not do here .</p>
             </div>
             <div class="col-lg-6">
-                <img class="img-fluid rounded" src="images/blood-donor (1).jpg" alt="">
+                <img class="img-fluid rounded" src="images/bd-donor (1).jpg" alt="">
             </div>
         </div>
 
