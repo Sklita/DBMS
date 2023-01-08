@@ -117,6 +117,10 @@ if($query->rowCount() > 0)
 {
 foreach($results as $row)
 {               ?>
+					<div class="col-md-4 pricing"><div class="price-top">
+					<img src="<?php echo htmlentities("./includes/uploads/".$row->pathless);?>" alt=" Donor" width="430px" height="250px" style="border:1px #000 solid"  />
+					</div></div>
+					<br>
 						<div class="form-group">
 							<label for="recipient-name" class="col-form-label">Full Name</label>
 							<input type="text" class="form-control" name="fullname" id="fullname" value="<?php  echo $row->FullName;?>">

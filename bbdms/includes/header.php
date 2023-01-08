@@ -36,8 +36,8 @@ $status=1;
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() == 0)
 {
- //$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password,image,pathless) VALUES(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password,:destfile,:filename)";
-$sql="CALL in_donor(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password,:destfile,:filename)";
+ //$sql="INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password,pathless) VALUES(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password,:filename)";
+$sql="CALL in_donor(:fullname,:mobile,:email,:age,:donation,:donationgroup,:address,:message,:status,:password,:filename)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fullname',$fullname,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
@@ -49,7 +49,7 @@ $query->bindParam(':address',$address,PDO::PARAM_STR);
 $query->bindParam(':message',$message,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
-$query->bindParam(':destfile',$destfile,PDO::PARAM_STR);
+//$query->bindParam(':destfile',$destfile,PDO::PARAM_STR);
 $query->bindParam(':filename',$filename,PDO::PARAM_STR);
 if($query->execute())
 //$lastInsertId = $dbh->lastInsertId();

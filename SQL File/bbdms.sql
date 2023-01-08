@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3399:3399
--- Generation Time: Jan 07, 2023 at 04:47 PM
+-- Generation Time: Jan 08, 2023 at 07:11 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -25,8 +25,8 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `in_donor` (IN `fullname` VARCHAR(100), IN `mobile` CHAR(11), IN `email` VARCHAR(100), IN `age` INT(11), IN `donation` VARCHAR(20), IN `donationgroup` VARCHAR(20), IN `address` VARCHAR(255), IN `message` MEDIUMTEXT, IN `status` INT(1), IN `password` VARCHAR(250), IN `image` VARCHAR(400), IN `pathless` VARCHAR(400))   BEGIN
-	INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password,image,pathless) VALUES(fullname,mobile,email,age,donation,donationgroup,address,message,status,password,image,pathless);
+CREATE DEFINER=`root`@`localhost` PROCEDURE `in_donor` (IN `fullname` VARCHAR(100), IN `mobile` CHAR(11), IN `email` VARCHAR(100), IN `age` INT(11), IN `donation` VARCHAR(20), IN `donationgroup` VARCHAR(20), IN `address` VARCHAR(255), IN `message` MEDIUMTEXT, IN `status` INT(1), IN `password` VARCHAR(250), IN `pathless` VARCHAR(400))   BEGIN
+	INSERT INTO  tbldonars(FullName,MobileNumber,EmailId,Age,Donation,DonationGroup,Address,Message,status,Password,pathless) VALUES(fullname,mobile,email,age,donation,donationgroup,address,message,status,password,pathless);
 END$$
 
 DELIMITER ;
@@ -196,7 +196,6 @@ CREATE TABLE `tbldonars` (
   `PostingDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` int(1) DEFAULT NULL,
   `Password` varchar(250) DEFAULT NULL,
-  `image` varchar(400) NOT NULL,
   `pathless` varchar(400) NOT NULL DEFAULT 'donor.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -204,32 +203,35 @@ CREATE TABLE `tbldonars` (
 -- Dumping data for table `tbldonars`
 --
 
-INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Donation`, `Age`, `DonationGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`, `image`, `pathless`) VALUES
-(6, 'Ashu Misra', '7797987981', 'ashu@gmail.com', 'Student Calculator ', 35, 'Gadgets', 'H-900, Ravinderpuri colony, Varanasi', ' Call me if Calculators are required I have 2 extra Calculators', '2022-05-17 12:43:41', 0, '202cb962ac59075b964b07152d234b70', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(11, 'Amit Kumar', '1231231230', 'amitk@gmail.com', 'Notes', 26, 'Books', 'ABc Street Sector 20 Noida UP', 'Books for creating notes one dozen classmate books', '2022-08-02 01:22:52', 1, 'f925916e2754e5e03f75dd58a5733251', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/th.jpg', 'th.jpg'),
-(12, 'Riya', '8523697413', 'riya@gmail.com', 'Sweaters ', 32, 'Clothes', 'saraswathipuram mysore', ' I would like to donate the Sweaters for old age homes.', '2022-11-17 03:53:33', 1, 'e7505d0ab0f63e08810f6000a5f37ae9', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(15, 'Aishu', '9988776655', 'aishu@gmail.com', 'BE Math Text', 26, 'Stationary', 'Mysore', ' I would like to donate engineering mathematics m1,2,3,4 books for needy ', '2022-11-21 16:01:44', 1, 'f598f436f5a2bb404404acd8568526fb', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/1.jpeg', '1.jpeg'),
-(16, 'ambani', '7856941239', 'ambani@gmail.com', 'Computers', 59, 'Gadgets', 'Mumbai', ' I want to help needy engineering students', '2022-11-23 11:15:02', 1, 'f454c7b96c33c5946d120e2e88330d52', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(17, 'Alex', '9632145879', 'alex@gmail.com', 'Cooker and Grinder', 30, 'Vessels', 'Bengaluru', ' I want to donate the vessels for ashramas ', '2022-11-24 11:49:44', 0, 'b7e6124aeffd2498bdb4fb8c525c6ea3', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(19, 'Saniya', '7856491239', 'saniya@gmail.com', 'Sweaters for needy ', 28, 'Clothes', 'Mangalore', ' I want to donate clothes like sweaters and jackets for needy ', '2022-11-29 06:21:27', 1, 'a0260154fe07352e36d3a432df569ad9', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/don.jpg', 'don.jpg'),
-(20, 'Bob', '1236547899', 'bob@gmail.com', 'Packed food ', 30, 'Food', 'Hubli Karnataka ', ' I want to donate packed food for needy ', '2022-11-29 06:25:24', 1, '5dda79243ec39dbdf6dd58b136149a08', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(28, 'Alan', '9874563321', 'alan@gmail.com', 'Sweaters ', 33, 'Clothes', 'Kuvempunagar mysore ', ' I want to donate sweaters to needy ', '2022-12-15 11:55:22', 0, '0541c626be6852ab369f571e974a7b30', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(29, 'Ramya', '9865471236', 'ramya@gmail.com', 'Blankets ', 36, 'Clothes', 'Banashankari Bangalore', ' I want to donate Blankets for needy ', '2023-01-02 15:39:33', 1, '40799c8e6e6abfffc45c40e5b3766bbb', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(30, 'Catherine ', '7896541236', 'catherine@gmail.com', 'Sweaters', 26, 'Clothes', 'JP nagar Mysore', ' I want to for needy ', '2023-01-03 04:56:20', 1, '541fa46ad074a573ca5e20bb4938c951', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(32, 'Daisy ', '8563214799', 'daisy@gmail.com', 'Preservable Food Ite', 35, 'Food', 'BEML Layout Srirampura Mysore', ' I would like to donate food items like biscuits , cookies which can preserved for needy ', '2023-01-04 06:58:33', 1, '264d54b1a203a5e5f29d4f6a34d85406', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(33, 'veena', '5987455666', 'veena@gmail.com', 'Food Groceries ', 55, 'Food', 'saraswathipuram mysore', ' iofjdhg ffhyrhyyjhjj', '2023-01-05 09:58:36', 1, 'ea0ae65534382b9c10df88bb15bb09a7', 'bbdms/includes/skli11.JPG', 'donor.jpg'),
-(34, 'Meena', '7896541221', 'meena@gmail.com', 'Blankets ', 32, 'Clothes', 'Mumbai', ' hnffggffgnvfhm', '2023-01-05 10:10:56', 1, 'd2a853ab54c012a838d15888284f3aa0', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(36, 'Irani', '7845123698', 'irani@gmail.com', 'Jackets', 32, 'Clothes', 'JP nagar Mysore', ' gshkuhisxddhxil', '2023-01-05 11:07:32', 1, '4424379e29872eb53b15f42c02509986', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(37, 'Lavina ', '9874563327', 'lavina@gmail.com', 'Vessels', 27, 'Vessels', 'Kuvempunagar mysore ', ' i want to donate to needy ', '2023-01-06 07:22:22', 1, '9ee39afad73fcf4eb014397adfea4c04', './uploads/1.jpeg', 'donor.jpg'),
-(38, 'lidiya', '9874563328', 'lidiya@123', 'Books', 26, 'Stationary', 'Kuvempunagar mysore ', ' i want to donate to needy', '2023-01-06 07:38:49', 1, 'e553e6255db879149ffd885bed674f36', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/admin/includes/uploads/1.jpeg', 'donor.jpg'),
-(39, 'pearl', '9874563326', 'pearl@gmail.com', 'Computer ', 23, 'Gadgets', 'Moodbire Mangalore', ' I want to donate to needy', '2023-01-06 07:42:41', 1, '02a0a6727211b3d98acccda63a2dedde', 'BBDMS-PROJECT-PHP/bbdms/includes/uploads/1.jpeg', 'donor.jpg'),
-(40, 'Prishal', '9874563355', 'prishal@gmail.com', 'Tablets', 20, 'Gadgets', 'Moodbire Mangalore', ' I want to donate for needy ', '2023-01-06 07:48:24', 1, 'dcea04dd5c7087e66705459bc39cae12', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/1.jpeg', 'donor.jpg'),
-(41, 'wilson', '6789456999', 'wilson@gmail.com', 'blankets', 28, 'Clothes', 'Kuvempunagar mysore ', ' i iiiooo', '2023-01-06 08:34:09', 1, 'fae48cf6ed26dafe2437a28660d87448', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(42, 'Esthela', '9874563789', 'esthela@gmail.com', 'Tshirts', 59, 'Clothes', 'Kuvempunagar mysore ', ' i want to donate to needy ', '2023-01-07 08:54:41', 1, '8c0b4ec133fa0bb40ad649b242cd184a', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/admin/includes/uploads/donor.jpg', 'donor.jpg'),
-(43, 'sanjana', '9874563445', 'sanjana@gmail.com', 'Sweaters ', 23, 'Clothes', 'Kuvempunagar mysore ', ' i jsjksk', '2023-01-07 09:27:47', 1, '70d8a10e2de6384a70dd67ab812f089d', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpeg', 'donor.jpg'),
-(44, 'Reshu', '6789456988', 'reshu@gmail.com', 'Computer ', 26, 'Gadgets', 'Kuvempunagar mysore ', ' bbkjb', '2023-01-07 10:00:36', 1, 'bce4a030c154a06b7ea0e2dfd581ff1a', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/Cartoon-DP-Boy-2.jpeg', 'Cartoon-DP-Boy-2.jpeg'),
-(45, 'walter', '9874563326', 'walter@gmail.com', 'Note Book', 20, 'Stationary', 'BEML Mysore', ' i fygjjg', '2023-01-07 10:47:01', 1, '146511e738d09f93d3729a07fbcb3158', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg'),
-(46, 'reena', '9874563328', 'reena@gmail.com', 'footwear', 55, 'Footwear', 'BEML Mysore', ' fsdxf', '2023-01-07 11:01:50', 1, 'aea66b01fcdd00b37c56865f3e788a8b', 'C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg', 'donor.jpg');
+INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Donation`, `Age`, `DonationGroup`, `Address`, `Message`, `PostingDate`, `status`, `Password`, `pathless`) VALUES
+(6, 'Ashu Misra', '7797987981', 'ashu@gmail.com', 'Student Calculator ', 35, 'Gadgets', 'H-900, Ravinderpuri colony, Varanasi', ' Call me if Calculators are required I have 2 extra Calculators', '2022-05-17 12:43:41', 0, '202cb962ac59075b964b07152d234b70', 'donor.jpg'),
+(11, 'Amit Kumar', '1231231230', 'amitk@gmail.com', 'Notes', 26, 'Books', 'ABc Street Sector 20 Noida UP', 'Books for creating notes one dozen classmate books', '2022-08-02 01:22:52', 1, 'f925916e2754e5e03f75dd58a5733251', 'th.jpg'),
+(12, 'Riya', '8523697413', 'riya@gmail.com', 'Sweaters ', 32, 'Clothes', 'saraswathipuram mysore', ' I would like to donate the Sweaters for old age homes.', '2022-11-17 03:53:33', 1, 'e7505d0ab0f63e08810f6000a5f37ae9', 'donor.jpg'),
+(15, 'Aishu', '9988776655', 'aishu@gmail.com', 'BE Math Text', 26, 'Stationary', 'Mysore', ' I would like to donate engineering mathematics m1,2,3,4 books for needy ', '2022-11-21 16:01:44', 1, 'f598f436f5a2bb404404acd8568526fb', '1.jpeg'),
+(16, 'ambani', '7856941239', 'ambani@gmail.com', 'Computers', 59, 'Gadgets', 'Mumbai', ' I want to help needy engineering students', '2022-11-23 11:15:02', 1, 'f454c7b96c33c5946d120e2e88330d52', 'donor.jpg'),
+(17, 'Alex', '9632145879', 'alex@gmail.com', 'Cooker and Grinder', 30, 'Vessels', 'Bengaluru', ' I want to donate the vessels for ashramas ', '2022-11-24 11:49:44', 0, 'b7e6124aeffd2498bdb4fb8c525c6ea3', 'donor.jpg'),
+(19, 'Saniya', '7856491239', 'saniya@gmail.com', 'Sweaters for needy ', 28, 'Clothes', 'Mangalore', ' I want to donate clothes like sweaters and jackets for needy ', '2022-11-29 06:21:27', 1, 'a0260154fe07352e36d3a432df569ad9', 'don.jpg'),
+(20, 'Bob', '1236547899', 'bob@gmail.com', 'Packed food ', 30, 'Food', 'Hubli Karnataka ', ' I want to donate packed food for needy ', '2022-11-29 06:25:24', 1, '5dda79243ec39dbdf6dd58b136149a08', 'donor.jpg'),
+(28, 'Alan', '9874563321', 'alan@gmail.com', 'Sweaters ', 33, 'Clothes', 'Kuvempunagar mysore ', ' I want to donate sweaters to needy ', '2022-12-15 11:55:22', 0, '0541c626be6852ab369f571e974a7b30', 'donor.jpg'),
+(29, 'Ramya', '9865471236', 'ramya@gmail.com', 'Blankets ', 36, 'Clothes', 'Banashankari Bangalore', ' I want to donate Blankets for needy ', '2023-01-02 15:39:33', 1, '40799c8e6e6abfffc45c40e5b3766bbb', 'donor.jpg'),
+(30, 'Catherine ', '7896541236', 'catherine@gmail.com', 'Sweaters', 26, 'Clothes', 'JP nagar Mysore', ' I want to for needy ', '2023-01-03 04:56:20', 1, '541fa46ad074a573ca5e20bb4938c951', 'donor.jpg'),
+(32, 'Daisy ', '8563214799', 'daisy@gmail.com', 'Preservable Food Ite', 35, 'Food', 'BEML Layout Srirampura Mysore', ' I would like to donate food items like biscuits , cookies which can preserved for needy ', '2023-01-04 06:58:33', 1, '264d54b1a203a5e5f29d4f6a34d85406', 'donor.jpg'),
+(33, 'veena', '5987455666', 'veena@gmail.com', 'Food Groceries ', 55, 'Food', 'saraswathipuram mysore', ' iofjdhg ffhyrhyyjhjj', '2023-01-05 09:58:36', 1, 'ea0ae65534382b9c10df88bb15bb09a7', 'donor.jpg'),
+(34, 'Meena', '7896541221', 'meena@gmail.com', 'Blankets ', 32, 'Clothes', 'Mumbai', ' hnffggffgnvfhm', '2023-01-05 10:10:56', 1, 'd2a853ab54c012a838d15888284f3aa0', 'donor.jpg'),
+(36, 'Irani', '7845123698', 'irani@gmail.com', 'Jackets', 32, 'Clothes', 'JP nagar Mysore', ' gshkuhisxddhxil', '2023-01-05 11:07:32', 1, '4424379e29872eb53b15f42c02509986', 'donor.jpg'),
+(37, 'Lavina ', '9874563327', 'lavina@gmail.com', 'Vessels', 27, 'Vessels', 'Kuvempunagar mysore ', ' i want to donate to needy ', '2023-01-06 07:22:22', 1, '9ee39afad73fcf4eb014397adfea4c04', 'donor.jpg'),
+(38, 'lidiya', '9874563328', 'lidiya@123', 'Books', 26, 'Stationary', 'Kuvempunagar mysore ', ' i want to donate to needy', '2023-01-06 07:38:49', 1, 'e553e6255db879149ffd885bed674f36', 'donor.jpg'),
+(39, 'pearl', '9874563326', 'pearl@gmail.com', 'Computer ', 23, 'Gadgets', 'Moodbire Mangalore', ' I want to donate to needy', '2023-01-06 07:42:41', 1, '02a0a6727211b3d98acccda63a2dedde', 'donor.jpg'),
+(40, 'Prishal', '9874563355', 'prishal@gmail.com', 'Tablets', 20, 'Gadgets', 'Moodbire Mangalore', ' I want to donate for needy ', '2023-01-06 07:48:24', 1, 'dcea04dd5c7087e66705459bc39cae12', 'donor.jpg'),
+(41, 'wilson', '6789456999', 'wilson@gmail.com', 'blankets', 28, 'Clothes', 'Kuvempunagar mysore ', ' i iiiooo', '2023-01-06 08:34:09', 1, 'fae48cf6ed26dafe2437a28660d87448', 'donor.jpg'),
+(42, 'Esthela', '9874563789', 'esthela@gmail.com', 'Tshirts', 59, 'Clothes', 'Kuvempunagar mysore ', ' i want to donate to needy ', '2023-01-07 08:54:41', 1, '8c0b4ec133fa0bb40ad649b242cd184a', 'donor.jpg'),
+(43, 'sanjana', '9874563445', 'sanjana@gmail.com', 'Sweaters ', 23, 'Clothes', 'Kuvempunagar mysore ', ' i jsjksk', '2023-01-07 09:27:47', 1, '70d8a10e2de6384a70dd67ab812f089d', 'donor.jpg'),
+(44, 'Reshu', '6789456988', 'reshu@gmail.com', 'Computer ', 26, 'Gadgets', 'Kuvempunagar mysore ', ' bbkjb', '2023-01-07 10:00:36', 1, 'bce4a030c154a06b7ea0e2dfd581ff1a', 'Cartoon-DP-Boy-2.jpeg'),
+(45, 'walter', '9874563326', 'walter@gmail.com', 'Note Book', 20, 'Stationary', 'BEML Mysore', ' i fygjjg', '2023-01-07 10:47:01', 1, '146511e738d09f93d3729a07fbcb3158', 'donor.jpg'),
+(46, 'reena', '9874563328', 'reena@gmail.com', 'footwear', 55, 'Footwear', 'BEML Mysore', ' fsdxf', '2023-01-07 11:01:50', 1, 'aea66b01fcdd00b37c56865f3e788a8b', 'donor.jpg'),
+(47, 'praveen', '8563214799', 'praveen@gmail.com', 'School shoe', 32, 'Footwear', 'Raja Rajeshwari Nagar Bangalore', ' iftgfgfgf', '2023-01-08 13:13:36', 1, 'e16505be66870f2c0a5a58d282d82d63', 'profile boy.jpg'),
+(48, 'Preema', '8794563225', 'preema@gmail.com', 'Sarees ', 32, 'Clothes', 'Gokulam Mysore', ' I want to donate sarees for needy women ', '2023-01-08 13:17:06', 1, 'f0b6af22cccef0d0032a6d885d5715eb', 'profile women.jpg'),
+(49, 'violet', '9758463256', 'violet@gmail.com', 'Food Groceries ', 30, 'Food', 'Gokulam Mysore', ' hkxkhjxsf', '2023-01-08 13:20:23', 1, '07c6ad753e8e2f5458e35908f57c2bee', 'girl.jpg');
 
 --
 -- Triggers `tbldonars`
@@ -418,7 +420,7 @@ ALTER TABLE `tbldeletion`
 -- AUTO_INCREMENT for table `tbldonars`
 --
 ALTER TABLE `tbldonars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `tblgroup`
