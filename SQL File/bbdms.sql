@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3399:3399
--- Generation Time: Jan 08, 2023 at 07:11 PM
+-- Generation Time: Jan 09, 2023 at 05:48 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -163,7 +163,8 @@ CREATE TABLE `tbldeletion` (
 INSERT INTO `tbldeletion` (`ID`, `name`, `EmailId`, `ContactNumber`, `deletefor`, `hideordelete`, `Message`, `ApplyDate`, `status`) VALUES
 (17, 'Alan', 'alan@gmail.com', 7896541223, 'No more Donation Available', 'DeleteMyAccount', 'mskskjs', '2022-12-15 11:56:37', 0),
 (18, 'Alex', 'alex@gmail.com', 7899655441, 'Others', 'DeleteMyAccount', 'kskjk', '2022-12-15 12:30:57', 0),
-(19, 'Bob', 'bob@gmail.com', 7896541223, 'Donated', 'DeleteMyAccount', 'kkkkkkk', '2022-12-15 13:04:43', 1);
+(19, 'Bob', 'bob@gmail.com', 7896541223, 'Donated', 'DeleteMyAccount', 'kkkkkkk', '2022-12-15 13:04:43', 1),
+(20, 'walter', 'walter@gmail.com', 7896541239, 'No more Donation Available', 'unhideMyaccount', 'fdfgfgh', '2023-01-09 16:42:31', 0);
 
 --
 -- Triggers `tbldeletion`
@@ -227,7 +228,7 @@ INSERT INTO `tbldonars` (`id`, `FullName`, `MobileNumber`, `EmailId`, `Donation`
 (42, 'Esthela', '9874563789', 'esthela@gmail.com', 'Tshirts', 59, 'Clothes', 'Kuvempunagar mysore ', ' i want to donate to needy ', '2023-01-07 08:54:41', 1, '8c0b4ec133fa0bb40ad649b242cd184a', 'donor.jpg'),
 (43, 'sanjana', '9874563445', 'sanjana@gmail.com', 'Sweaters ', 23, 'Clothes', 'Kuvempunagar mysore ', ' i jsjksk', '2023-01-07 09:27:47', 1, '70d8a10e2de6384a70dd67ab812f089d', 'donor.jpg'),
 (44, 'Reshu', '6789456988', 'reshu@gmail.com', 'Computer ', 26, 'Gadgets', 'Kuvempunagar mysore ', ' bbkjb', '2023-01-07 10:00:36', 1, 'bce4a030c154a06b7ea0e2dfd581ff1a', 'Cartoon-DP-Boy-2.jpeg'),
-(45, 'walter', '9874563326', 'walter@gmail.com', 'Note Book', 20, 'Stationary', 'BEML Mysore', ' i fygjjg', '2023-01-07 10:47:01', 1, '146511e738d09f93d3729a07fbcb3158', 'donor.jpg'),
+(45, 'walter', '9874563326', 'walter@gmail.com', 'Note Book', 20, 'Stationary', 'BEML Mysore', 'I want to donate for needy students ', '2023-01-07 10:47:01', 0, '146511e738d09f93d3729a07fbcb3158', 'donor.jpg'),
 (46, 'reena', '9874563328', 'reena@gmail.com', 'footwear', 55, 'Footwear', 'BEML Mysore', ' fsdxf', '2023-01-07 11:01:50', 1, 'aea66b01fcdd00b37c56865f3e788a8b', 'donor.jpg'),
 (47, 'praveen', '8563214799', 'praveen@gmail.com', 'School shoe', 32, 'Footwear', 'Raja Rajeshwari Nagar Bangalore', ' iftgfgfgf', '2023-01-08 13:13:36', 1, 'e16505be66870f2c0a5a58d282d82d63', 'profile boy.jpg'),
 (48, 'Preema', '8794563225', 'preema@gmail.com', 'Sarees ', 32, 'Clothes', 'Gokulam Mysore', ' I want to donate sarees for needy women ', '2023-01-08 13:17:06', 1, 'f0b6af22cccef0d0032a6d885d5715eb', 'profile women.jpg'),
@@ -414,7 +415,7 @@ ALTER TABLE `tblcontactusquery`
 -- AUTO_INCREMENT for table `tbldeletion`
 --
 ALTER TABLE `tbldeletion`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tbldonars`
