@@ -4,15 +4,15 @@ How to run the Donor Excess Using PHP and MySQL
 
 2. Extract the file and copy bbdms folder
 
-3.Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/HTML)
+3.Paste inside root directory for xampp xampp/htdocs
 
-4.Open PHPMyAdmin (http://localhost/phpmyadmin)
+4.Open PHPMyAdmin 
 
 5. Create a bbdms with the name bbdms
 
-6. Import bbdms.sql file(given inside the zip package in the SQL file folder)
+6. Import bbdms.sql fil
 
-7. Run the script http://localhost/bbdms
+7. Run the http://localhost/bbdms
 
 Admin Credential
 Username: admin
