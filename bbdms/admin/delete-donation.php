@@ -131,7 +131,7 @@ $msg="Donor details public";
 											<th> Delete</th>
 											<th>Message </th>
 											<th>Apply Date</th>
-											<th>Status</th>
+											
 											<th>action </th>
 										</tr>
 									</thead>
@@ -145,7 +145,7 @@ $msg="Donor details public";
 											<th> Delete</th>
 											<th>Message </th>
 											<th>Apply Date</th>
-											<th>Status</th>
+											
 											<th>action </th>
 										</tr>
 									</tfoot>
@@ -161,7 +161,7 @@ if($query->rowCount() > 0)
 foreach($results as $result)
 {				?>	
 										<tr>
-											<td><?php echo htmlentities($result->ID);?></td>
+											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->name);?></td>
                                             <td><?php echo htmlentities($result->EmailId);?></td>
 											<td><?php echo htmlentities($result->ContactNumber);?></td>
@@ -169,7 +169,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->hideordelete);?></td>
 											<td><?php echo htmlentities($result->Message);?></td>
 											<td><?php echo htmlentities($result->ApplyDate);?></td>
-											<td><?php echo htmlentities($result->status);?></td>
+											
 										<td>
 										<?php if($result->status==1)
 {?>

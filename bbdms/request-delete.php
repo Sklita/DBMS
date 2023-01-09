@@ -26,7 +26,7 @@ $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
 
-echo '<script>alert("Request has been sent. We will Delete it .")</script>';
+echo '<script>alert("Request has been sent. We will Take necessary action.")</script>';
 }
 else 
 {
@@ -138,6 +138,7 @@ echo "<script>alert('Something went wrong try again later.');</script>";
                                 <select  class="form-control" id="hidedel" name="hidedel">
                                     <option value="DeleteMyAccount">Delete My Account </option>
                                     <option value="HideMyAccount">Hide My Account </option>
+                                    <option value="unhideMyaccount">Unhide My hidden account </option>
                                     </select>
                                     
                             </div> 
