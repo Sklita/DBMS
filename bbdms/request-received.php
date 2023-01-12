@@ -105,7 +105,7 @@ return true;
                                     <thead>
                                          <tr>
                                          	<th>S.No</th>
-                                          <th>ID</th>
+                                          
                                             <th>Name</th>
                                             <th>Mobile Number</th>
                                             <th>Email</th>
@@ -132,7 +132,7 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>
                                             <td><?php echo htmlentities($cnt);?></td>
-											<td><?php echo htmlentities($row->ID);?></td>
+											
                                         <td><?php  echo htmlentities($row->name);?></td>
                                              <td><?php  echo htmlentities($row->ContactNumber);?></td>
                                              <td><?php  echo htmlentities($row->EmailId);?></td>
