@@ -124,7 +124,7 @@ foreach($results as $result)
 					
 					<div class="price-top">
 					
-							<!-- <img src="images/blood-donor.jpg" alt="" class="img-fluid" /> -->
+							<!-- <img src="images/-donor.jpg" alt="" class="img-fluid" /> -->
 							<img src="<?php echo htmlentities("./includes/uploads/".$result->pathless);?>" alt="" width="350px" height="210px"  />
 						<h3><?php echo htmlentities($result->FullName);?>
 						</h3>

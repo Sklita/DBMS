@@ -92,7 +92,7 @@ foreach($results as $result)
 					
 					<div class="price-top">
 					
-							<!-- <img src="images/blood-donor.jpg" alt="Blood Donot" style="border:1px #000 solid" class="img-fluid" /> -->
+							<!-- <img src="images/-donor.jpg" alt=" Donor" style="border:1px #000 solid" class="img-fluid" /> -->
 							<img src="<?php echo htmlentities("./includes/uploads/".$result->pathless);?>" alt=" Donor" width="430px" height="250px" style="border:1px #000 solid"  />
 						<h3><?php echo htmlentities($result->FullName);?>
 						</h3>

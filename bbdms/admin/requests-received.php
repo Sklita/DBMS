@@ -74,7 +74,7 @@ else{
 
 
 
-<h3> Blood Requests Received</h3>
+<h3> Donation Requests Received</h3>
 <hr />
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">

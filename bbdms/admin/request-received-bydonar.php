@@ -105,7 +105,7 @@ $sdata=$_POST['searchdata'];
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Blood Info</div>
+							<div class="panel-heading">Donation Info</div>
 							<div class="panel-body">
 							
 								<table border="1" class="table table-responsive">

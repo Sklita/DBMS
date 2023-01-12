@@ -38,7 +38,7 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>BloodBank & Donor Management System | Forgot Password</title>
+	<title>Donation Management System | Forgot Password</title>
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
