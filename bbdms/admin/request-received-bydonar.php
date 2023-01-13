@@ -112,8 +112,8 @@ $sdata=$_POST['searchdata'];
                                     <thead>
                                          <tr>
                                          	<th>S.No</th>
-                                          <th>Name of Donar</th>
-                                          <th>Conatact Number of Donar</th>
+                                          <th>Name of Donor</th>
+                                          <th>Conatact Number of Donor</th>
                                             <th>Name of Requirer</th>
                                             <th>Mobile Number of Requirer</th>
                                             <th>Email of Requirer</th>

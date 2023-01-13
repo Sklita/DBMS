@@ -104,7 +104,7 @@ include('includes/config.php');
 	<div class="blog-w3ls py-5" id="blog">
 		<div class="container py-xl-5 py-lg-3">
 			<div class="w3ls-titles text-center mb-5">
-				<h3 class="title text-white">Some of the Donar</h3>
+				<h3 class="title text-white">Some of the Donors</h3>
 
 			</div>
 			<div class="row package-grids mt-5">
@@ -180,7 +180,7 @@ foreach($results as $result)
             </div>
             <div class="col-md-4" style="padding-top: 30px;"> 
     
-        	<a class="btn btn-lg btn-secondary btn-block login-button ml-lg-5 mt-lg-0 mt-4 mb-lg-0 mb-3" data-toggle="modal" data-target="#exampleModalCenter1" href="#" data-toggle="modal" data-target="#exampleModalCenter1"> Become a Donar</a>
+        	<a class="btn btn-lg btn-secondary btn-block login-button ml-lg-5 mt-lg-0 mt-4 mb-lg-0 mb-3" data-toggle="modal" data-target="#exampleModalCenter1" href="#" data-toggle="modal" data-target="#exampleModalCenter1"> Become a Donor</a>
             </div>
         </div>
 		</div>

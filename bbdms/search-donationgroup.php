@@ -108,7 +108,7 @@ foreach($results as $result)
 	<div class="agileits-contact py-5">
 		<div class="py-xl-5 py-lg-3">
 			<div class="w3ls-titles text-center mb-5">
-				<h3 class="title">Donar List</h3>
+				<h3 class="title">Donors List</h3>
 				<p class="mt-2">List Based on Your Search </p>
 			</div>
 			<div class="d-flex">

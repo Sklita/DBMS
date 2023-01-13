@@ -56,7 +56,7 @@ include('includes/config.php');
 				<li class="breadcrumb-item">
 					<a href="index.php">Home</a>
 				</li>
-				<li class="breadcrumb-item active" aria-current="page">Donar List</li>
+				<li class="breadcrumb-item active" aria-current="page">Donor List</li>
 			</ol>
 		</div>
 	</div>
@@ -68,7 +68,7 @@ include('includes/config.php');
 			
 			<div class="w3ls-titles text-center mb-5">
 				<h3 class="title">Donors List</h3>
-				<p class="mt-2">Details of Donars and thier Donation</p>
+				<p class="mt-2">Details of Donors and their Donation</p>
 			</div>
 			<div class="d-flex">
 				<div class="row package-grids mt-5" style="padding-left: 50px;">

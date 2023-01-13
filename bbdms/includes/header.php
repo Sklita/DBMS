@@ -27,6 +27,11 @@ if(in_array($filecheck,$fileextstored))
     //C:\xampp\htdocs\BBDMS-Project-PHP\bbdms\includes\uploads
     move_uploaded_file($filetemp,$destfile);
 }
+else{
+    $destfile="C:/xampp/htdocs/BBDMS-Project-PHP/bbdms/includes/uploads/donor.jpg";
+    move_uploaded_file($filetemp,$destfile);
+    $filename="donor.jpg";
+}
 $status=1;
     $password=md5($_POST['password']);
     $ret="select EmailId from tbldonars where EmailId=:email";
